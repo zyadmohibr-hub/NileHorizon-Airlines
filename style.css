@@ -1,5 +1,5 @@
 /* ======================================================
-   RESET + BASE
+    RESET + BASE
 ====================================================== */
 * {
     margin: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 /* ======================================================
-   NAVBAR
+    NAVBAR
 ====================================================== */
 .navbar {
     display: flex;
@@ -41,7 +41,7 @@ body {
 }
 
 /* ======================================================
-   HERO
+    HERO
 ====================================================== */
 .hero {
     height: 60vh;
@@ -59,7 +59,7 @@ body {
 }
 
 /* ======================================================
-   SECTIONS
+    SECTIONS
 ====================================================== */
 .section {
     padding: 50px 5%;
@@ -67,7 +67,7 @@ body {
 }
 
 /* ======================================================
-   SEARCH BOX
+    SEARCH BOX
 ====================================================== */
 .search-box {
     display: flex;
@@ -80,7 +80,7 @@ body {
 }
 
 /* ======================================================
-   INPUTS (GLOBAL FIX)
+    INPUTS (GLOBAL FIX)
 ====================================================== */
 input,
 textarea {
@@ -98,7 +98,7 @@ textarea:focus {
 }
 
 /* ======================================================
-   BUTTONS
+    BUTTONS
 ====================================================== */
 .main-btn {
     padding: 12px 25px;
@@ -110,7 +110,7 @@ textarea:focus {
 }
 
 /* ======================================================
-   GRID LAYOUT
+    GRID LAYOUT
 ====================================================== */
 .grid-layout {
     display: grid;
@@ -121,7 +121,7 @@ textarea:focus {
 }
 
 /* ======================================================
-   CARDS
+    CARDS
 ====================================================== */
 .card {
     padding: 20px;
@@ -135,7 +135,7 @@ textarea:focus {
 }
 
 /* ======================================================
-   STATS
+    STATS
 ====================================================== */
 .stats {
     display: flex;
@@ -146,7 +146,7 @@ textarea:focus {
 }
 
 /* ======================================================
-   FOOTER
+    FOOTER
 ====================================================== */
 .footer {
     text-align: center;
@@ -154,16 +154,42 @@ textarea:focus {
 }
 
 /* ======================================================
-   RESPONSIVE DESIGN
+    AUTH PAGES FIXES (التعديلات الجديدة هنا)
+====================================================== */
+
+/* تتقيل كلمة Create Account */
+#signupForm h2 {
+    font-weight: 900 !important; /* أقصى درجة ثقل */
+    color: #333; /* لون أغمق */
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+}
+
+/* تتقيل أسماء الخانات (Labels) */
+.input-group label {
+    display: block;
+    font-weight: 800 !important; /* تتقيل الخط جداً */
+    color: #222; /* لون أسود صريح أو أغمق درجة */
+    margin-bottom: 8px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+/* تحسين شكل الـ Placeholder عشان ميبقاش باهت قوي */
+::placeholder {
+    color: #777 !important;
+    opacity: 1; 
+}
+
+/* ======================================================
+    RESPONSIVE DESIGN
 ====================================================== */
 
 /* Tablets */
 @media (max-width: 992px) {
-
     .grid-layout {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .navbar {
         flex-wrap: wrap;
         gap: 10px;
@@ -172,38 +198,31 @@ textarea:focus {
 
 /* Mobile */
 @media (max-width: 768px) {
-
     .navbar {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
-
     .navbar__links {
         flex-direction: column;
         width: 100%;
         gap: 10px;
     }
-
     .hero {
         height: auto;
         padding: 60px 20px;
     }
-
     .hero-content {
         width: 100%;
     }
-
     .grid-layout {
         grid-template-columns: 1fr;
     }
-
     .stats {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
     .search-box {
         flex-direction: column;
         margin-top: 0;
@@ -212,19 +231,15 @@ textarea:focus {
 
 /* Small Mobile */
 @media (max-width: 480px) {
-
     .navbar__logo {
         font-size: 18px;
     }
-
     .navbar__link {
         font-size: 14px;
     }
-
     .hero-content h1 {
         font-size: 20px;
     }
-
     .main-btn {
         width: 100%;
     }

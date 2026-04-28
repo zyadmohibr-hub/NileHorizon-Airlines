@@ -10,14 +10,13 @@
         /* كلاسات للتبديل بين الفورم */
         .form-section { display: none; }
         .form-section.active { display: block; animation: slideIn 0.4s ease-out; }
-        .error-hint { color: #ff4d4d; font-size: 14px; margin-top: 10px; display: none; font-weight: bold; }
         
         @keyframes slideIn { 
             from { transform: translateY(10px); opacity: 0; } 
             to { transform: translateY(0); opacity: 1; } 
         }
 
-        /* تنسيق التبويبات (Login / Sign Up) */
+        /* تنسيق التبويبات */
         .tab-btn { 
             cursor: pointer; 
             padding: 10px 25px; 
@@ -25,24 +24,56 @@
             background: none; 
             font-size: 1.1rem; 
             transition: 0.3s; 
-            color: gray;
-            border-bottom: 3px solid transparent; /* خط شفاف في البداية */
+            color: #888;
+            border-bottom: 3px solid transparent;
         }
         
-        /* الحالة النشطة للزرار (الخط الأصفر) */
         .tab-btn.active { 
             color: #d4af37; 
             border-bottom: 3px solid #d4af37; 
-            font-weight: bold; 
+            font-weight: 900 !important;
         }
 
+        /* ======================================================
+           تعديلات الوضوح والتقل (إجباري)
+           ====================================================== */
+        
+        /* تتقيل العناوين الكبيرة */
+        .form-section h1 {
+            font-weight: 900 !important;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: inherit; 
+        }
+
+        /* تتقيل العناوين الصغيرة فوق الخانات */
+        .inputs label {
+            display: block;
+            font-weight: 900 !important; /* أقصى تقل للخط */
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: inherit;
+        }
+
+        /* تحسين شكل الخانات */
         .inputs input {
             border-radius: 8px;
-            border: 1px solid #ccc;
+            border: 2px solid #ccc;
             outline: none;
+            background: rgba(255, 255, 255, 0.05);
+            color: inherit;
+            font-weight: bold;
         }
+
         .inputs input:focus {
             border-color: #d4af37;
+        }
+
+        /* ضمان ظهور الكلام باللون الأبيض في الدارك مود */
+        [href="dark.css"] ~ body .inputs label,
+        [href="dark.css"] ~ body .form-section h1 {
+            color: #ffffff !important;
+            text-shadow: 0 0 8px rgba(167, 139, 250, 0.6);
         }
     </style>
 </head>
@@ -63,7 +94,7 @@
     </nav>
 
     <main class="container" style="display: flex; justify-content: center; padding: 50px 20px;">
-        <div class="card shadow-card" style="max-width: 450px; width: 100%; padding: 30px; text-align: center; background: #fff; border-radius: 15px;">
+        <div class="card shadow-card" style="max-width: 450px; width: 100%; padding: 40px; text-align: center; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
             
             <div style="margin-bottom: 30px; display: flex; justify-content: center; gap: 20px;">
                 <button class="tab-btn active" id="loginTabBtn" onclick="switchForm('login')">Login</button>
@@ -73,16 +104,16 @@
             <section id="loginForm" class="form-section active">
                 <header><h1>Welcome Back</h1></header>
                 <div class="inputs" style="text-align: left; margin-top: 20px;">
-                    <div style="margin-bottom: 20px;">
+                    <div style="margin-bottom: 25px;">
                         <label for="loginEmail">Email Address</label>
-                        <input type="email" id="loginEmail" placeholder="example@mail.com" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                        <input type="email" id="loginEmail" placeholder="example@mail.com" style="width: 100%; padding: 14px; margin-top: 8px; box-sizing: border-box;">
                     </div>
-                    <div style="margin-bottom: 20px;">
+                    <div style="margin-bottom: 25px;">
                         <label for="loginPass">Password</label>
-                        <input type="password" id="loginPass" placeholder="********" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                        <input type="password" id="loginPass" placeholder="********" style="width: 100%; padding: 14px; margin-top: 8px; box-sizing: border-box;">
                     </div>
                 </div>
-                <button onclick="validateLogin()" style="width: 100%; padding: 15px; background: #d4af37; color: white; border: none; cursor: pointer; border-radius: 8px; font-weight: bold; font-size: 1rem;">Login</button>
+                <button onclick="validateLogin()" style="width: 100%; padding: 16px; background: #d4af37; color: white; border: none; cursor: pointer; border-radius: 10px; font-weight: 900; font-size: 1.1rem; margin-top: 10px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">Login</button>
             </section>
 
             <section id="signupForm" class="form-section">
@@ -90,22 +121,22 @@
                 <div class="inputs" style="text-align: left; margin-top: 20px;">
                     <div style="margin-bottom: 15px;">
                         <label for="newName">Full Name</label>
-                        <input type="text" id="newName" placeholder="Your Name" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                        <input type="text" id="newName" placeholder="Your Name" style="width: 100%; padding: 14px; margin-top: 8px; box-sizing: border-box;">
                     </div>
                     <div style="margin-bottom: 15px;">
                         <label for="newEmail">E-mail</label>
-                        <input type="email" id="newEmail" placeholder="your@email.com" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                        <input type="email" id="newEmail" placeholder="your@email.com" style="width: 100%; padding: 14px; margin-top: 8px; box-sizing: border-box;">
                     </div>
                     <div style="margin-bottom: 15px;">
                         <label for="newPass">Password</label>
-                        <input type="password" id="newPass" placeholder="At least 6 characters" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                        <input type="password" id="newPass" placeholder="At least 6 characters" style="width: 100%; padding: 14px; margin-top: 8px; box-sizing: border-box;">
                     </div>
                     <div style="margin-bottom: 15px;">
                         <label for="repeatPass">Confirm Password</label>
-                        <input type="password" id="repeatPass" placeholder="Repeat your password" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                        <input type="password" id="repeatPass" placeholder="Repeat your password" style="width: 100%; padding: 14px; margin-top: 8px; box-sizing: border-box;">
                     </div>
                 </div>
-                <button onclick="validateSignup()" style="width: 100%; padding: 15px; background: #d4af37; color: white; border: none; cursor: pointer; border-radius: 8px; font-weight: bold; font-size: 1rem;">Sign Up</button>
+                <button onclick="validateSignup()" style="width: 100%; padding: 16px; background: #d4af37; color: white; border: none; cursor: pointer; border-radius: 10px; font-weight: 900; font-size: 1.1rem; margin-top: 15px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">Sign Up</button>
             </section>
         </div>
     </main>
