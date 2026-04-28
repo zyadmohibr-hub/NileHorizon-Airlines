@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nile Horizon - Payment Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link id="themeStylesheet" rel="stylesheet" href="light.css">
+    <style>
+        .payment-form-section { display: none; margin-top: 30px; }
+        .active { display: block !important; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar__logo">✈️ Nile Horizon</div>
+    <ul class="navbar__links">
+        <li><a href="home.html" class="navbar__link">Home</a></li>
+        <li><a href="flights.html" class="navbar__link">Flights</a></li>
+        <li><a href="payment.html" class="navbar__link navbar__link--active">Book the Travel</a></li>
+        <li><a href="passenger.html" class="navbar__link">Passenger Details</a></li>
+        <li><a href="my-bookings.html" class="navbar__link">My Bookings</a></li>
+        <li><a href="about.html" class="navbar__link">About</a></li>
+        <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        <li><a href="sign.html" class="navbar__link">Login / Sign up</a></li>
+    </ul>
+    <button id="themeToggleBtn" class="main-btn">🌙</button>
+</nav>
+
+<div class="section">
+    <h1>Book Your Flight</h1>
+    <p>Choose your destination and payment method</p>
+
+    <div class="grid-layout">
+
+        <div class="card">
+            <h3>Kuwait 🇰🇼</h3> <p>11,120 EGP</p>
+            <button class="main-btn" onclick="openPayment('Kuwait', 11120, 'cash')" style="background:#2ecc71;">Cash</button>
+            <button class="main-btn" onclick="openPayment('Kuwait', 11200, 'visa')" style="background:#3498db;">Visa</button>
+        </div>
+
+        <div class="card">
+            <h3>Roma 🇮🇹</h3> <p>22,900 EGP</p>
+            <button class="main-btn" onclick="openPayment('Roma', 22900, 'cash')" style="background:#2ecc71;">Cash</button>
+            <button class="main-btn" onclick="openPayment('Roma', 22900, 'visa')" style="background:#3498db;">Visa</button>
+        </div>
+
+        <div class="card">
+            <h3>UK 🇬🇧</h3> <p>31,800 EGP</p>
+            <button class="main-btn" onclick="openPayment('UK', 31800, 'cash')" style="background:#2ecc71;">Cash</button>
+            <button class="main-btn" onclick="openPayment('UK', 31800, 'visa')" style="background:#3498db;">Visa</button>
+        </div>
+
+        <div class="card">
+            <h3>USA 🇺🇸</h3> <p>52,400 EGP</p>
+            <button class="main-btn" onclick="openPayment('USA', 52400, 'cash')" style="background:#2ecc71;">Cash</button>
+            <button class="main-btn" onclick="openPayment('USA', 52400, 'visa')" style="background:#3498db;">Visa</button>
+        </div>
+
+        <div class="card">
+            <h3>China 🇨🇳</h3> <p>38,600 EGP</p>
+            <button class="main-btn" onclick="openPayment('China', 38600, 'cash')" style="background:#2ecc71;">Cash</button>
+            <button class="main-btn" onclick="openPayment('China', 38600, 'visa')" style="background:#3498db;">Visa</button>
+        </div>
+
+        <div class="card">
+            <h3>France 🇫🇷</h3> <p>27,500 EGP</p>
+            <button class="main-btn" onclick="openPayment('France', 27500, 'cash')" style="background:#2ecc71;">Cash</button>
+            <button class="main-btn" onclick="openPayment('France', 27500, 'visa')" style="background:#3498db;">Visa</button>
+        </div>
+
+        <div class="card">
+            <h3>India 🇮🇳</h3> <p>16,300 EGP</p>
+            <button class="main-btn" onclick="openPayment('India', 16300, 'cash')" style="background:#2ecc71;">Cash</button>
+            <button class="main-btn" onclick="openPayment('India', 16300, 'visa')" style="background:#3498db;">Visa</button>
+        </div>
+
+        <div class="card">
+            <h3>Italia 🇮🇹</h3> <p>24,100 EGP</p>
+            <button class="main-btn" onclick="openPayment('Italia', 24100, 'cash')" style="background:#2ecc71;">Cash</button>
+            <button class="main-btn" onclick="openPayment('Italia', 24100, 'visa')" style="background:#3498db;">Visa</button>
+        </div>
+
+        <div class="card">
+            <h3>Jordan 🇯🇴</h3> <p>8,400 EGP</p>
+            <button class="main-btn" onclick="openPayment('Jordan', 8400, 'cash')" style="background:#2ecc71;">Cash</button>
+            <button class="main-btn" onclick="openPayment('Jordan', 8400, 'visa')" style="background:#3498db;">Visa</button>
+        </div>
+
+    </div>
+
+    <div id="paymentArea" class="payment-form-section card" style="max-width: 500px; margin: 40px auto; text-align: left;">
+        <h2 id="destTitle">Destination</h2>
+        <p id="priceTitle">Price:</p>
+        <hr>
+
+        <div id="cashFields" style="display:none;">
+            <label>Vodafone Cash Number:</label>
+            <input type="text" id="cashPhone" placeholder="01XXXXXXXXX">
+
+            <label>OTP Code:</label>
+            <input type="text" id="cashOTP" placeholder="Enter OTP">
+
+            <button class="main-btn" onclick="validateCashPayment()">Confirm Cash Payment</button>
+        </div>
+
+        <div id="visaFields" style="display:none;">
+            <label>Card Number:</label>
+            <input type="text" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+
+            <label>OTP:</label>
+            <input type="password" id="otp" placeholder="****">
+
+            <button class="main-btn" onclick="validateVisaPayment()">Confirm Visa Payment</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

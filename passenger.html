@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Details — Nile Horizon</title>
+    <link rel="stylesheet" href="style.css">
+    <link id="themeStylesheet" rel="stylesheet" href="light.css">
+</head>
+<body>
+
+    <nav class="navbar" id="mainNav">
+        <div class="navbar__logo">
+            <span class="navbar__logo-icon">✈️</span>
+            <span class="navbar__logo-text">Nile Horizon</span>
+        </div>
+        <ul class="navbar__links">
+            <li><a href="home.html" class="navbar__link">Home</a></li>
+            <li><a href="flights.html" class="navbar__link">Flights</a></li>
+            <li><a href="payment.html" class="navbar__link">Book the Travel</a></li>
+            <li><a href="passenger.html" class="navbar__link navbar__link--active">Passenger Details</a></li>
+            <li><a href="my-bookings.html" class="navbar__link">My Bookings</a></li>
+            <li><a href="about.html" class="navbar__link">About</a></li>
+            <li><a href="contact.html" class="navbar__link">Contact</a></li>
+            <li><a href="sign.html" class="navbar__link">Login In / Sign up</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggleBtn">🌙</button>
+    </nav>
+
+    <div class="section">
+        <h1 style="margin-bottom: 10px;">Passenger Details</h1>
+        <p>Please enter your information exactly as it appears on your passport.</p>
+
+        <form id="passengerForm" style="max-width: 800px; margin: 30px auto; text-align: left;">
+            
+            <div class="card" style="margin-bottom: 25px; padding: 25px;">
+                <h3 style="color: #d4af37; margin-bottom: 20px;">👤 Personal Information</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    
+                    <div class="input-group">
+                        <label>First Name</label>
+                        <input type="text" id="fname" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Last Name</label>
+                        <input type="text" id="lname" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <select id="gender" required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Date of Birth</label>
+                        <input type="date" id="dob" required>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 25px; padding: 25px;">
+                <h3 style="color: #d4af37; margin-bottom: 20px;">🛂 Passport & Contact</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    
+                    <div class="input-group">
+                        <label>Passport Number</label>
+                        <input type="text" id="passport" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Nationality</label>
+                        <input type="text" id="nationality" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <button type="button"
+                        onclick="savePassengerData()"
+                        class="main-btn"
+                        style="width: 250px; font-size: 1.1rem;">
+                    Continue to Payment
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Nile Horizon Airlines — Faculty Project. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nile Horizon — Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link id="themeStylesheet" rel="stylesheet" href="light.css">
+    <style>
+        /* كلاسات للتبديل بين الفورم */
+        .form-section { display: none; }
+        .form-section.active { display: block; animation: slideIn 0.4s ease-out; }
+        .error-hint { color: #ff4d4d; font-size: 14px; margin-top: 10px; display: none; font-weight: bold; }
+        
+        @keyframes slideIn { 
+            from { transform: translateY(10px); opacity: 0; } 
+            to { transform: translateY(0); opacity: 1; } 
+        }
+
+        /* تنسيق التبويبات (Login / Sign Up) */
+        .tab-btn { 
+            cursor: pointer; 
+            padding: 10px 25px; 
+            border: none; 
+            background: none; 
+            font-size: 1.1rem; 
+            transition: 0.3s; 
+            color: gray;
+            border-bottom: 3px solid transparent; /* خط شفاف في البداية */
+        }
+        
+        /* الحالة النشطة للزرار (الخط الأصفر) */
+        .tab-btn.active { 
+            color: #d4af37; 
+            border-bottom: 3px solid #d4af37; 
+            font-weight: bold; 
+        }
+
+        .inputs input {
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        .inputs input:focus {
+            border-color: #d4af37;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="mainNav">
+      <div class="navbar__logo">✈️ Nile Horizon</div>
+      <ul class="navbar__links">
+        <li><a class="navbar__link" href="home.html">Home</a></li>
+        <li><a class="navbar__link" href="flights.html">Flights</a></li>
+        <li><a class="navbar__link" href="payment.html">Book the Travel</a></li>
+        <li><a class="navbar__link" href="passenger.html">Passenger Details</a></li>
+        <li><a class="navbar__link" href="my-bookings.html">My Bookings</a></li>
+        <li><a class="navbar__link" href="about.html">About</a></li>
+        <li><a class="navbar__link" href="contact.html">Contact</a></li>
+        <li><a class="navbar__link" href="sign.html">Login / Sign up</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggleBtn">🌙</button>
+    </nav>
+
+    <main class="container" style="display: flex; justify-content: center; padding: 50px 20px;">
+        <div class="card shadow-card" style="max-width: 450px; width: 100%; padding: 30px; text-align: center; background: #fff; border-radius: 15px;">
+            
+            <div style="margin-bottom: 30px; display: flex; justify-content: center; gap: 20px;">
+                <button class="tab-btn active" id="loginTabBtn" onclick="switchForm('login')">Login</button>
+                <button class="tab-btn" id="signupTabBtn" onclick="switchForm('signup')">Sign Up</button>
+            </div>
+
+            <section id="loginForm" class="form-section active">
+                <header><h1>Welcome Back</h1></header>
+                <div class="inputs" style="text-align: left; margin-top: 20px;">
+                    <div style="margin-bottom: 20px;">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="example@mail.com" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="loginPass">Password</label>
+                        <input type="password" id="loginPass" placeholder="********" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                    </div>
+                </div>
+                <button onclick="validateLogin()" style="width: 100%; padding: 15px; background: #d4af37; color: white; border: none; cursor: pointer; border-radius: 8px; font-weight: bold; font-size: 1rem;">Login</button>
+            </section>
+
+            <section id="signupForm" class="form-section">
+                <header><h1>Create Account</h1></header>
+                <div class="inputs" style="text-align: left; margin-top: 20px;">
+                    <div style="margin-bottom: 15px;">
+                        <label for="newName">Full Name</label>
+                        <input type="text" id="newName" placeholder="Your Name" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="newEmail">E-mail</label>
+                        <input type="email" id="newEmail" placeholder="your@email.com" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="newPass">Password</label>
+                        <input type="password" id="newPass" placeholder="At least 6 characters" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="repeatPass">Confirm Password</label>
+                        <input type="password" id="repeatPass" placeholder="Repeat your password" style="width: 100%; padding: 12px; margin-top: 8px; box-sizing: border-box;">
+                    </div>
+                </div>
+                <button onclick="validateSignup()" style="width: 100%; padding: 15px; background: #d4af37; color: white; border: none; cursor: pointer; border-radius: 8px; font-weight: bold; font-size: 1rem;">Sign Up</button>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+/* ======================================================
+   RESET + BASE
+====================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 2px solid #3a7bd5;
+}
+
+.navbar__links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar__link {
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar__link:hover {
+    opacity: 0.7;
+}
+
+/* ======================================================
+   HERO
+====================================================== */
+.hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    padding: 30px;
+    border-radius: 15px;
+}
+
+/* ======================================================
+   SECTIONS
+====================================================== */
+.section {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+/* ======================================================
+   SEARCH BOX
+====================================================== */
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -60px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* ======================================================
+   INPUTS (GLOBAL FIX — مهم جدًا)
+====================================================== */
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #3a7bd5;
+}
+
+/* ======================================================
+   BUTTONS (GLOBAL SYSTEM)
+====================================================== */
+.main-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* ======================================================
+   GRID LAYOUT
+====================================================== */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ======================================================
+   CARDS
+====================================================== */
+.card {
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ======================================================
+   STATS
+====================================================== */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 5%;
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+.footer {
+    text-align: center;
+    padding: 20px;
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN
+====================================================== */
+@media (max-width: 992px) {
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Bookings — Nile Horizon Airlines</title>
+    <link rel="stylesheet" href="style.css">
+    <link id="themeStylesheet" rel="stylesheet" href="light.css">
+    <style>
+        /* تنسيق يضمن عدم تداخل الكلام */
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 850px; /* يمنع الجدول من الانضغاط */
+        }
+        th {
+            text-align: left;
+            padding: 15px;
+            background-color: #fcfcfc;
+            border-bottom: 3px solid #d4af37;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: #444;
+        }
+        tr:hover {
+            background-color: #fdfbf7;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="mainNav">
+      <div class="navbar__logo">
+        <span class="navbar__logo-icon">✈️</span>
+        <span class="navbar__logo-text">Nile Horizon</span>
+      </div>
+      <ul class="navbar__links">
+        <li><a href="home.html" class="navbar__link">Home</a></li>
+        <li><a href="flights.html" class="navbar__link">Flights</a></li>
+        <li><a href="payment.html" class="navbar__link">Book the Travel</a></li>
+        <li><a href="passenger.html" class="navbar__link">Passenger Details</a></li>
+        <li><a href="my-bookings.html" class="navbar__link navbar__link--active">My Bookings</a></li>
+        <li><a href="about.html" class="navbar__link">About</a></li>
+        <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        <li><a href="sign.html" class="navbar__link">Login In / Sign up </a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggleBtn">🌙</button>
+    </nav>
+
+    <main class="container" style="padding: 40px 20px; min-height: 80vh;">
+        <header style="text-align: center; margin-bottom: 30px;">
+            <h1 style="color: #d4af37; font-size: 2.8rem; margin-bottom: 10px;">My Bookings</h1>
+            <p style="color: #666; font-size: 1.1rem;">Manage your fixed flights and newly booked travels.</p>
+        </header>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Class</th>
+                        <th>Price</th>
+                        <th>Method</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingsBody">
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer" style="text-align: center; padding: 20px; margin-top: 50px; border-top: 1px solid #eee;">
+        <p>&copy; 2026 Nile Horizon Airlines — Faculty Project. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

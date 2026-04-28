@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nile Horizon Airlines — Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link id="themeStylesheet" rel="stylesheet" href="light.css">
+</head>
+<body>
+    <nav class="navbar" id="mainNav">
+      <div class="navbar__logo">
+        <span class="navbar__logo-icon">✈️</span>
+        <span class="navbar__logo-text">Nile Horizon</span>
+      </div>
+      <ul class="navbar__links">
+        <li><a href="home.html" class="navbar__link">Home</a></li>
+        <li><a href="flights.html" class="navbar__link">Flights</a></li>
+        <li><a href="payment.html" class="navbar__link">Book the Travel</a></li>
+        <li><a href="passenger.html" class="navbar__link">Passenger Details</a></li>
+        <li><a href="my-bookings.html" class="navbar__link">My Bookings</a></li>
+        <li><a href="about.html" class="navbar__link">About</a></li>
+        <li><a href="contact.html" class="navbar__link navbar__link--active">Contact</a></li>
+        <li><a href="sign.html" class="navbar__link">Login In / Sign up </a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggleBtn">🌙</button>
+    </nav>
+
+    <main class="contact-page container" style="padding-top: 20px;">
+        <section class="contact-section" style="text-align: center; margin-bottom: 30px;">
+            <h1>get in touch</h1>
+            <p>your journey starts with a conversation. we're here to assist with your flights and travel plans</p>
+        </section>
+
+        <div class="contact-wrapper" style="display: flex; gap: 30px; flex-wrap: wrap;">
+            <section class="contact-form-container" style="flex: 2;">
+                <form id="contact-form" class="card">
+                    <div class="form-group">
+                        <label for="name">full name</label>
+                        <input type="text" id="name" placeholder="enter your full name" required style="width:100%; margin-bottom:15px; padding:10px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">email address</label>
+                        <input type="email" id="email" placeholder="enter your email address" required style="width:100%; margin-bottom:15px; padding:10px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-ref">flight booking reference</label>
+                        <input type="text" id="booking-ref" placeholder="enter the flight booking reference" style="width:100%; margin-bottom:15px; padding:10px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How can we help with your flight?</label>
+                        <textarea id="message" rows="5" placeholder="enter your message here" required style="width:100%; margin-bottom:15px; padding:10px;"></textarea>
+                    </div>
+                    <button type="submit" class="main-btn" style="width:100%;">send message</button>
+                </form>
+            </section>
+
+            <aside class="contact-sidebar" style="flex: 1;">
+                <div class="card info-card" style="margin-bottom: 20px;">
+                    <h3 style="color: #d4af37;">Global Headquarters</h3>
+                    <p>📍 Heliopolis, cairo, egypt</p>
+                </div>
+                <div class="card info-card" style="margin-bottom: 20px;">
+                    <h3 style="color: #d4af37;">Customer Service</h3>
+                    <p>📞 01103880893</p>
+                    <p>📧 123zuzzessam358@gmail.com</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Nile Horizon Airlines — Faculty Project. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

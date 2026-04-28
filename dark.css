@@ -1,0 +1,83 @@
+/* 🌌 DARK MOOD: Futuristic / Cyber vibe */
+
+/* 🌍 Background */
+body {
+    background: radial-gradient(circle at top, #0b0f1a, #050814);
+    color: #e5e7eb;
+}
+
+/* 🧭 Navbar + Stats */
+.navbar,
+.stats {
+    background: rgba(5, 8, 20, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+/* 🔗 Links */
+.navbar__link {
+    color: #a78bfa;
+}
+
+.navbar__link:hover {
+    color: #38bdf8;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+/* 🎯 Hero (same image BUT different feeling) */
+.hero {
+    background-image: url("https://images.unsplash.com/photo-1474302770737-173ee21bab63");
+    filter: brightness(0.7) contrast(1.2) saturate(1.3);
+}
+
+.hero-content {
+    background: rgba(5, 8, 20, 0.75);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* 📦 Cards (glass + neon edge) */
+.search-box,
+.card,
+.payment-card-choice {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.25);
+}
+
+/* 🔘 Buttons (different identity than light) */
+.main-btn,
+.select-btn {
+    background: linear-gradient(135deg, #a78bfa, #38bdf8);
+    color: #050814;
+    border-radius: 10px;
+}
+
+.main-btn:hover {
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+}
+
+/* ✏️ Inputs */
+input,
+textarea {
+    background: rgba(5, 8, 20, 0.7);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: white;
+}
+
+input:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.4);
+}
+
+/* 🧠 small detail = mood difference */
+.section {
+    letter-spacing: 0.3px;
+}

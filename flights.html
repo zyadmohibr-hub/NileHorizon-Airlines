@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Flights — Nile Horizon</title>
+    <link rel="stylesheet" href="style.css">
+    <link id="themeStylesheet" rel="stylesheet" href="light.css">
+</head>
+<body>
+
+    <nav class="navbar" id="mainNav">
+        <div class="navbar__logo">✈️ Nile Horizon</div>
+        <ul class="navbar__links">
+            <li><a href="home.html" class="navbar__link">Home</a></li>
+            <li><a href="flights.html" class="navbar__link navbar__link--active">Flights</a></li>
+            <li><a href="payment.html" class="navbar__link">Book the Travel</a></li>
+            <li><a href="passenger.html" class="navbar__link">Passenger Details</a></li>
+            <li><a href="my-bookings.html" class="navbar__link">My Bookings</a></li>
+            <li><a href="about.html" class="navbar__link">About</a></li>
+            <li><a href="contact.html" class="navbar__link">Contact</a></li>
+            <li><a href="sign.html" class="navbar__link">Login / Sign up</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggleBtn">🌙</button>
+    </nav>
+
+    <div class="section">
+        <h1>Global Destinations</h1>
+        <p>Explore all our premium destinations</p>
+
+        <div class="search-container" style="text-align:center; margin:30px 0;">
+            <input type="text" id="search-input" onkeyup="searchFlights()" placeholder="Search your destination..." style="padding:12px 20px; width:50%; border-radius:30px; border:1px solid #ccc;">
+        </div>
+
+        <div class="grid-layout">
+            <div class="card flight-card">
+                <img src="images/us.jpg" alt="USA" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+                <h3>Egypt → USA</h3>
+                <p>New York</p>
+                <p class="price">52,400 EGP</p>
+                <button class="main-btn" onclick="openPayment('USA', 52400)">Book Now</button>
+            </div>
+
+            <div class="card flight-card">
+                <img src="images/uk.jpg" alt="UK" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+                <h3>Egypt → UK</h3>
+                <p>London</p>
+                <p class="price">31,800 EGP</p>
+                <button class="main-btn" onclick="openPayment('UK', 31800)">Book Now</button>
+            </div>
+
+            <div class="card flight-card">
+                <img src="images/france.jpg" alt="France" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+                <h3>Egypt → France</h3>
+                <p>Paris</p>
+                <p class="price">27,500 EGP</p>
+                <button class="main-btn" onclick="openPayment('France', 27500)">Book Now</button>
+            </div>
+
+            <div class="card flight-card">
+                <img src="images/italy.jpg" alt="Italy" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+                <h3>Egypt → Italy</h3>
+                <p>Venice</p>
+                <p class="price">24,100 EGP</p>
+                <button class="main-btn" onclick="openPayment('Italy', 24100)">Book Now</button>
+            </div>
+
+            <div class="card flight-card">
+                <img src="images/rome.jpg" alt="Rome" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+                <h3>Egypt → Rome</h3>
+                <p>Italy Capital</p>
+                <p class="price">22,900 EGP</p>
+                <button class="main-btn" onclick="openPayment('Rome', 22900)">Book Now</button>
+            </div>
+
+            <div class="card flight-card">
+                <img src="images/china.jpg" alt="China" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+                <h3>Egypt → China</h3>
+                <p>Beijing</p>
+                <p class="price">38,600 EGP</p>
+                <button class="main-btn" onclick="openPayment('China', 38600)">Book Now</button>
+            </div>
+
+            <div class="card flight-card">
+                <img src="images/kuwait.jpg" alt="Kuwait" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+                <h3>Egypt → Kuwait</h3>
+                <p>Gulf Region</p>
+                <p class="price">11,200 EGP</p>
+                <button class="main-btn" onclick="openPayment('Kuwait', 11200)">Book Now</button>
+            </div>
+
+            <div class="card flight-card">
+                <img src="images/jordan.jpg" alt="Jordan" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+                <h3>Egypt → Jordan</h3>
+                <p>Petra</p>
+                <p class="price">8,400 EGP</p>
+                <button class="main-btn" onclick="openPayment('Jordan', 8400)">Book Now</button>
+            </div>
+
+            <div class="card flight-card">
+                <img src="images/india.jpg" alt="India" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+                <h3>Egypt → India</h3>
+                <p>New Delhi</p>
+                <p class="price">16,300 EGP</p>
+                <button class="main-btn" onclick="openPayment('India', 16300)">Book Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

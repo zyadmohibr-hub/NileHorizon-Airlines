@@ -1,0 +1,62 @@
+/* 🌞 LIGHT MODE */
+
+/* 🌍 Base */
+body {
+  background: #f0f7ff;
+  color: #1a3a5f;
+}
+
+/* 🧭 Navbar + Stats */
+.navbar,
+.stats {
+  background: #ffffff;
+  border-bottom: 3px solid #0055ff;
+}
+
+/* 🔗 Links */
+.navbar__link {
+  color: #0055ff;
+}
+
+.navbar__link:hover {
+  opacity: 0.8;
+}
+
+/* 🎯 Hero */
+.hero {
+  background-image: url("https://images.unsplash.com/photo-1474302770737-173ee21bab63");
+}
+
+.hero-content {
+  background: rgba(255, 255, 255, 0.75);
+  color: #1a3a5f;
+  backdrop-filter: blur(8px);
+}
+
+/* 📦 Cards */
+.search-box,
+.card {
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* 🔘 Buttons */
+.main-btn {
+  background: #0055ff;
+  color: white;
+}
+
+.main-btn:hover {
+  opacity: 0.9;
+}
+
+/* ✏️ Inputs */
+input,
+textarea {
+  border: 1px solid #b3d1ff;
+}
+
+input[readonly] {
+  background: #e8f1ff;
+  color: #0055ff;
+}
