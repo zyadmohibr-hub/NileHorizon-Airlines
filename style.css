@@ -80,7 +80,7 @@ body {
 }
 
 /* ======================================================
-   INPUTS (GLOBAL FIX — مهم جدًا)
+   INPUTS (GLOBAL FIX)
 ====================================================== */
 input,
 textarea {
@@ -98,7 +98,7 @@ textarea:focus {
 }
 
 /* ======================================================
-   BUTTONS (GLOBAL SYSTEM)
+   BUTTONS
 ====================================================== */
 .main-btn {
     padding: 12px 25px;
@@ -156,14 +156,76 @@ textarea:focus {
 /* ======================================================
    RESPONSIVE DESIGN
 ====================================================== */
+
+/* Tablets */
 @media (max-width: 992px) {
+
     .grid-layout {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }
 
-@media (max-width: 600px) {
+/* Mobile */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .navbar__links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
     .grid-layout {
         grid-template-columns: 1fr;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .search-box {
+        flex-direction: column;
+        margin-top: 0;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+    .navbar__logo {
+        font-size: 18px;
+    }
+
+    .navbar__link {
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 20px;
+    }
+
+    .main-btn {
+        width: 100%;
     }
 }

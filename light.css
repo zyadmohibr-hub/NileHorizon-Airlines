@@ -1,4 +1,4 @@
-/* 🌞 LIGHT MODE */
+ /* 🌞 LIGHT MODE */
 
 /* 🌍 Base */
 body {
@@ -25,12 +25,15 @@ body {
 /* 🎯 Hero */
 .hero {
   background-image: url("https://images.unsplash.com/photo-1474302770737-173ee21bab63");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-content {
   background: rgba(255, 255, 255, 0.75);
   color: #1a3a5f;
   backdrop-filter: blur(8px);
+  max-width: 90%;
 }
 
 /* 📦 Cards */
@@ -59,4 +62,35 @@ textarea {
 input[readonly] {
   background: #e8f1ff;
   color: #0055ff;
+}
+
+/* ======================================================
+   RESPONSIVE SAFETY PATCH (MINOR ONLY)
+====================================================== */
+@media (max-width: 992px) {
+  .hero-content {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 15px;
+  }
 }
