@@ -4,18 +4,16 @@
 const themeToggleBtn = document.getElementById('themeToggleBtn');
 const themeStylesheet = document.getElementById('themeStylesheet');
 
-// تحميل الثيم المحفوظ
 if (localStorage.getItem('theme') === 'dark') {
     if (themeStylesheet) themeStylesheet.setAttribute('href', 'dark.css');
-    if (themeToggleBtn) themeToggleBtn.textContent = '☀️';
+    if (themeToggleBtn) themeToggleBtn.innerHTML = '&#9728;';
 }
 
-// تبديل الثيم
 if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
         const isLight = themeStylesheet.getAttribute('href') === 'light.css';
         themeStylesheet.setAttribute('href', isLight ? 'dark.css' : 'light.css');
-        themeToggleBtn.textContent = isLight ? '☀️' : '🌙';
+        themeToggleBtn.innerHTML = isLight ? '&#9728;' : '&#127769;';
         localStorage.setItem('theme', isLight ? 'dark' : 'light');
     });
 }
@@ -30,12 +28,9 @@ function updateNavbar() {
 
     if (isLoggedIn === 'true' && loginLink) {
         loginLink.parentElement.innerHTML = `
-            <div style="display:flex; align-items:center; gap:10px;">
-                <span style="color:#d4af37; font-weight:bold;">Hi, ${userName}</span>
-                <button onclick="logout()" 
-                    style="background:#ff4d4d; color:white; border:none; padding:5px 10px; cursor:pointer; border-radius:5px;">
-                    Logout
-                </button>
+            <div class="user-box">
+                <span class="user-name">Hi, ${userName}</span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
             </div>`;
     }
 }
@@ -43,7 +38,7 @@ function updateNavbar() {
 function logout() {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('userName');
-    localStorage.removeItem('currentPassenger'); // مسح بيانات المسافر عند الخروج
+    localStorage.removeItem('currentPassenger');
     window.location.href = "sign.html";
 }
 
@@ -96,7 +91,7 @@ function checkPassengerBeforeAction() {
 }
 
 /* ======================================================
-   6. Booking System (تعديل: الدخول لصفحة الدفع مسموح)
+   6. Booking System
    ====================================================== */
 function openPayment(destination, price, method = 'visa') {
     if (localStorage.getItem('isLoggedIn') !== 'true') {
@@ -105,16 +100,13 @@ function openPayment(destination, price, method = 'visa') {
         return;
     }
 
-    // حفظ البيانات مؤقتاً
     localStorage.setItem('tempDest', destination);
     localStorage.setItem('tempPrice', Number(price));
     localStorage.setItem('paymentMethod', method);
 
     const paymentArea = document.getElementById('paymentArea');
 
-    // لو المستخدم في صفحة الدفع وداس على وسيلة دفع (كاش/فيزا)
     if (paymentArea) {
-        // هنا بنعمل الـ Check: لو مفيش بيانات يروح لصفحة المسافر
         if (!checkPassengerBeforeAction()) return;
 
         paymentArea.classList.add('active');
@@ -130,35 +122,33 @@ function openPayment(destination, price, method = 'visa') {
         }
         paymentArea.scrollIntoView({ behavior: 'smooth' });
     } else {
-        // لو المستخدم في صفحة Flights وداس Book Now
-        // بردو نخليه يملأ البيانات الأول عشان نضمن التسلسل
         if (!checkPassengerBeforeAction()) return;
         window.location.href = "payment.html";
     }
 }
 
 /* ======================================================
-   7. Confirm Booking
+   7. Validate & Confirm Payment (تم التعديل ليعمل مع الجدول)
    ====================================================== */
-
-function validateCashPayment() {
-    const phone = document.getElementById('cashPhone').value;
-    const otp = document.getElementById('cashOTP').value;
-    if (phone.length < 11 || !otp) {
-        alert("Please enter a valid Vodafone Cash number and OTP!");
-        return;
-    }
-    confirmBooking('Vodafone Cash');
-}
-
-function validateVisaPayment() {
-    const card = document.getElementById('cardNumber').value;
+function validatePayment() {
+    const method = localStorage.getItem('paymentMethod');
     const otp = document.getElementById('otp').value;
-    if (card.length < 12 || !otp) {
-        alert("Please enter valid Card details and OTP!");
-        return;
+
+    if (method === 'cash') {
+        const phone = document.getElementById('cashPhone').value;
+        if (phone.length < 11 || !otp) {
+            alert("Please enter a valid Phone number and OTP!");
+            return;
+        }
+        confirmBooking('Cash / Wallet');
+    } else {
+        const card = document.getElementById('cardNumber').value;
+        if (card.length < 12 || !otp) {
+            alert("Please enter valid Card details and OTP!");
+            return;
+        }
+        confirmBooking('Visa / Master Card');
     }
-    confirmBooking('Visa');
 }
 
 function confirmBooking(methodName) {
@@ -197,7 +187,7 @@ function confirmBooking(methodName) {
 /* ======================================================
    8. Bookings Table
    ====================================================== */
-const fixedFlights = [
+let fixedFlights = [
     { from: "Cairo", to: "London", class: "Business", price: "48,500 EGP", method: "Visa", date: "15/05/2026" },
     { from: "Cairo", to: "Dubai", class: "Economy", price: "14,200 EGP", method: "Wallet", date: "22/06/2026" }
 ];
@@ -210,6 +200,11 @@ function renderTable() {
     let allData = [...fixedFlights, ...userBookings];
 
     body.innerHTML = "";
+    if (allData.length === 0) {
+        body.innerHTML = "<tr><td colspan='7' style='text-align:center;'>No bookings found.</td></tr>";
+        return;
+    }
+
     allData.forEach((item, index) => {
         const isFixed = index < fixedFlights.length;
         body.innerHTML += `
@@ -222,7 +217,7 @@ function renderTable() {
                 <td>${item.date}</td>
                 <td>
                     <button onclick="handleDelete(${index}, ${isFixed})"
-                        style="background:red; color:white; border:none; padding:5px; border-radius:5px; cursor:pointer;">
+                        class="delete-btn" style="background:red; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer;">
                         Delete
                     </button>
                 </td>
@@ -309,22 +304,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const price = localStorage.getItem('tempPrice');
         const method = localStorage.getItem('paymentMethod') || 'visa';
 
-        // بنفتح الفورم فقط لو البيانات موجودة، لو مش موجودة هيفضل شايف الكروت عادي لحد ما يدوس زرار
         if (dest && price && localStorage.getItem('currentPassenger')) {
-            const destTitle = document.getElementById('destTitle');
-            const priceTitle = document.getElementById('priceTitle');
             const paymentArea = document.getElementById('paymentArea');
+            if (paymentArea) {
+                paymentArea.classList.add('active');
+                document.getElementById('destTitle').innerText = "Booking to " + dest;
+                document.getElementById('priceTitle').innerText = "Total Price: " + Number(price).toLocaleString() + " EGP";
 
-            if (paymentArea) paymentArea.classList.add('active');
-            if (destTitle) destTitle.innerText = "Booking to " + dest;
-            if (priceTitle) priceTitle.innerText = "Total Price: " + Number(price).toLocaleString() + " EGP";
-
-            if (method === 'cash') {
-                if (document.getElementById('cashFields')) document.getElementById('cashFields').style.display = 'block';
-                if (document.getElementById('visaFields')) document.getElementById('visaFields').style.display = 'none';
-            } else {
-                if (document.getElementById('visaFields')) document.getElementById('visaFields').style.display = 'block';
-                if (document.getElementById('cashFields')) document.getElementById('cashFields').style.display = 'none';
+                if (method === 'cash') {
+                    document.getElementById('cashFields').style.display = 'block';
+                    document.getElementById('visaFields').style.display = 'none';
+                } else {
+                    document.getElementById('visaFields').style.display = 'block';
+                    document.getElementById('cashFields').style.display = 'none';
+                }
             }
         }
     }

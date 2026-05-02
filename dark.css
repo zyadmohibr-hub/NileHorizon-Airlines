@@ -88,51 +88,38 @@ input:focus {
 }
 
 /* ======================================================
-   🔥 ACCOUNT PAGE CLARITY PATCH (FIX)
-   ====================================================== */
+   🔥 ACCOUNT USER (Hi + Logout)
+====================================================== */
 
-/* تتقيل وتوضيح العناوين (Create Account / Welcome Back) */
-#loginForm h1, 
-#signupForm h1,
-.form-section h1 {
-    color: #ffffff !important;
-    font-weight: 900 !important;
-    text-shadow: 0 0 15px rgba(167, 139, 250, 0.7) !important;
-    margin-bottom: 25px !important;
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* تتقيل وتوضيح الـ Labels (Email, Password) */
-.inputs label,
-#signupForm label,
-#loginForm label {
-    color: #38bdf8 !important; /* لون سماوي فاقع عشان يظهر في الضلمة */
-    font-weight: 900 !important;
-    font-size: 1.1rem !important;
-    display: block !important;
-    margin-bottom: 8px !important;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8) !important;
+.user-name {
+    font-weight: 900;
+    color: #a78bfa;
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
 }
 
-/* تعديل خلفية الكارت عشان الكلام يظهر بوضوح */
-.card.shadow-card {
-    background: rgba(10, 15, 30, 0.95) !important; 
-    border: 1px solid rgba(168, 85, 247, 0.6) !important;
+.logout-btn {
+    background: linear-gradient(135deg, #a78bfa, #38bdf8);
+    color: #050814;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* تتقيل زرار الـ Tabs (Login/Sign Up) */
-.tab-btn {
-    font-weight: 900 !important;
-    color: #888 !important;
-}
-
-.tab-btn.active {
-    color: #d4af37 !important;
-    border-bottom: 3px solid #d4af37 !important;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5) !important;
+.logout-btn:hover {
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.6);
 }
 
 /* ======================================================
-    RESPONSIVE SAFETY PATCH
+   RESPONSIVE SAFETY PATCH
 ====================================================== */
 
 @media (max-width: 992px) {
@@ -145,13 +132,16 @@ input:focus {
     .hero {
         padding: 40px 15px;
     }
+
     .hero-content {
         padding: 20px;
         text-align: center;
     }
+
     .search-box {
         width: 100%;
     }
+
     .navbar,
     .stats {
         flex-wrap: wrap;
@@ -162,9 +152,11 @@ input:focus {
     .hero-content {
         padding: 15px;
     }
+
     .navbar__link {
         font-size: 14px;
     }
+
     .main-btn,
     .select-btn {
         width: 100%;

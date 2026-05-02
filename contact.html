@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +6,68 @@
     <title>Nile Horizon Airlines — Contact Us</title>
     <link rel="stylesheet" href="style.css">
     <link id="themeStylesheet" rel="stylesheet" href="light.css">
+    <style>
+        /* التنسيقات الخاصة بصفحة التواصل */
+        .contact-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .contact-table td {
+            padding: 15px;
+            border-bottom: 2px solid #eee;
+            vertical-align: middle;
+        }
+        .icon-cell { font-size: 1.5rem; width: 50px; text-align: center; }
+        .label-cell { font-weight: 900; color: #2c3e50; width: 100px; }
+        .value-cell { color: #333; font-weight: 600; }
+        
+        input, textarea, select {
+            border: 2px solid #333 !important;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .main-btn {
+            background: #2c3e50;
+            color: white;
+            border: 2px solid #000;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 900;
+        }
+
+        .main-btn:hover {
+            background: #1a252f;
+            transform: translateY(-2px);
+        }
+
+        .map-box {
+            margin-top: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar" id="mainNav">
-      <div class="navbar__logo">
-        <span class="navbar__logo-icon">✈️</span>
+      <div class="navbar__logo" style="font-weight: 900;">
+        <span class="navbar__logo-icon">&#9992;</span>
         <span class="navbar__logo-text">Nile Horizon</span>
       </div>
       <ul class="navbar__links">
@@ -23,54 +80,73 @@
         <li><a href="contact.html" class="navbar__link navbar__link--active">Contact</a></li>
         <li><a href="sign.html" class="navbar__link">Login In / Sign up </a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggleBtn">🌙</button>
+      <button class="theme-toggle" id="themeToggleBtn">&#127769;</button>
     </nav>
 
-    <main class="contact-page container" style="padding-top: 20px;">
-        <section class="contact-section" style="text-align: center; margin-bottom: 30px;">
-            <h1>get in touch</h1>
-            <p>your journey starts with a conversation. we're here to assist with your flights and travel plans</p>
-        </section>
+    <main class="container" style="padding: 50px 20px; max-width: 1200px; margin: auto;">
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 style="font-size: 3rem; font-weight: 900; color: #000; text-transform: uppercase;">Get In Touch</h1>
+            <p style="font-weight: 700; color: #555;">We're here to help you navigate your journey with Nile Horizon.</p>
+        </header>
 
-        <div class="contact-wrapper" style="display: flex; gap: 30px; flex-wrap: wrap;">
-            <section class="contact-form-container" style="flex: 2;">
-                <form id="contact-form" class="card">
-                    <div class="form-group">
-                        <label for="name">full name</label>
-                        <input type="text" id="name" placeholder="enter your full name" required style="width:100%; margin-bottom:15px; padding:10px;">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">email address</label>
-                        <input type="email" id="email" placeholder="enter your email address" required style="width:100%; margin-bottom:15px; padding:10px;">
-                    </div>
-                    <div class="form-group">
-                        <label for="booking-ref">flight booking reference</label>
-                        <input type="text" id="booking-ref" placeholder="enter the flight booking reference" style="width:100%; margin-bottom:15px; padding:10px;">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">How can we help with your flight?</label>
-                        <textarea id="message" rows="5" placeholder="enter your message here" required style="width:100%; margin-bottom:15px; padding:10px;"></textarea>
-                    </div>
-                    <button type="submit" class="main-btn" style="width:100%;">send message</button>
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+            <!-- فورم التواصل -->
+            <div style="flex: 2; min-width: 350px;">
+                <form id="contact-form" class="card" style="padding: 30px; border: 2px solid #000;">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="e.g. Ziad Mohamed" required>
+
+                    <label>Email Address</label>
+                    <input type="email" placeholder="ziad@example.com" required>
+
+                    <label>Booking Reference (Optional)</label>
+                    <input type="text" placeholder="NH-7890BC">
+
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="How can we assist you today?" required></textarea>
+
+                    <button type="submit" class="main-btn" style="padding: 15px; font-size: 1.1rem;">SEND MESSAGE</button>
                 </form>
-            </section>
+            </div>
 
-            <aside class="contact-sidebar" style="flex: 1;">
-                <div class="card info-card" style="margin-bottom: 20px;">
-                    <h3 style="color: #d4af37;">Global Headquarters</h3>
-                    <p>📍 Heliopolis, cairo, egypt</p>
+            <!-- معلومات التواصل -->
+            <div style="flex: 1; min-width: 300px;">
+                <div class="card" style="padding: 0; overflow: hidden; border: 2px solid #000; margin-bottom: 20px;">
+                    <table class="contact-table">
+                        <tr style="background: #2c3e50; color: white;">
+                            <td colspan="3" style="text-align: center; font-weight: 900; padding: 15px;">SUPPORT DESK</td>
+                        </tr>
+                        <tr>
+                            <td class="icon-cell">&#128205;</td>
+                            <td class="label-cell">Location</td>
+                            <td class="value-cell">Heliopolis, Cairo</td>
+                        </tr>
+                        <tr>
+                            <td class="icon-cell">&#128222;</td>
+                            <td class="label-cell">Phone</td>
+                            <td class="value-cell">01103880893</td>
+                        </tr>
+                        <tr>
+                            <td class="icon-cell">&#128231;</td>
+                            <td class="label-cell">Email</td>
+                            <td class="value-cell" style="font-size: 0.8rem;">support@nilehorizon.com</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="card info-card" style="margin-bottom: 20px;">
-                    <h3 style="color: #d4af37;">Customer Service</h3>
-                    <p>📞 01103880893</p>
-                    <p>📧 123zuzzessam358@gmail.com</p>
+
+                <!-- الخريطة -->
+                <div class="map-box">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.157833116499!2d31.3396!3d30.0967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145815dcc3e4e599%3A0x330c244485507797!2sHeliopolis!5e0!3m2!1sen!2seg!4v1714560000000" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
                 </div>
-            </aside>
+            </div>
         </div>
     </main>
 
     <footer class="footer">
-        <p>© 2026 Nile Horizon Airlines — Faculty Project. All rights reserved.</p>
+        <p>&copy; 2026 Nile Horizon Airlines — Faculty of Computers and AI (Helwan). All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

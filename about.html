@@ -6,11 +6,37 @@
   <title>About Us — Nile Horizon Airlines</title>
   <link id="themeStylesheet" rel="stylesheet" href="light.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+      /* تنسيق الجداول لتناسب شكل الصفحة الأصلي */
+      .about-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-bottom: 30px;
+          background: #fff;
+          border-radius: 10px;
+          overflow: hidden;
+      }
+      .about-table th, .about-table td {
+          padding: 20px;
+          text-align: left;
+          border-bottom: 1px solid #eee;
+      }
+      .about-table th {
+          background-color: #f9f9f9;
+          color: #d4af37;
+          font-size: 1.2rem;
+          width: 30%;
+      }
+      .about-table td {
+          color: #444;
+          line-height: 1.6;
+      }
+  </style>
 </head>
 <body>
     <nav class="navbar" id="mainNav">
       <div class="navbar__logo">
-        <span class="navbar__logo-icon">✈️</span>
+        <span class="navbar__logo-icon">&#9992;</span>
         <span class="navbar__logo-text">Nile Horizon</span>
       </div>
       <ul class="navbar__links">
@@ -23,7 +49,7 @@
         <li><a href="contact.html" class="navbar__link">Contact</a></li>
         <li><a href="sign.html" class="navbar__link">Login In / Sign up </a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggleBtn">🌙</button>
+      <button class="theme-toggle" id="themeToggleBtn">&#127769;</button>
     </nav>
 
     <section class="hero" id="aboutHero">
@@ -38,38 +64,46 @@
 
     <section class="section">
       <h2 class="section-title">Our Mission</h2>
-      <div class="grid-layout">
-        <div class="card">
-          <h3>Safety First</h3>
-          <p>Every aircraft in our fleet undergoes rigorous maintenance checks. Your safety is our absolute top priority.</p>
-        </div>
-        <div class="card">
-          <h3>Affordable Travel</h3>
-          <p>We believe everyone deserves to explore Egypt. Our pricing makes domestic flights accessible to all.</p>
-        </div>
-        <div class="card">
-          <h3>Connecting Egypt</h3>
-          <p>From Cairo to Aswan, we link the nation's greatest cities daily.</p>
-        </div>
-      </div>
+      <table class="about-table">
+          <tr>
+              <th>Safety First</th>
+              <td>Every aircraft in our fleet undergoes rigorous maintenance checks. Your safety is our absolute top priority.</td>
+          </tr>
+          <tr>
+              <th>Affordable Travel</th>
+              <td>We believe everyone deserves to explore Egypt. Our pricing makes domestic flights accessible to all.</td>
+          </tr>
+          <tr>
+              <th>Connecting Egypt</th>
+              <td>From Cairo to Aswan, we link the nation's greatest cities daily.</td>
+          </tr>
+      </table>
     </section>
 
     <section class="section">
       <h2 class="section-title">Our Fleet (Planes)</h2>
-      <div class="grid-layout">
-        <div class="card">
-          <h3>Airbus A320neo</h3>
-          <p>Capacity: 180 passengers | 12 aircraft</p>
-        </div>
-        <div class="card">
-          <h3>Boeing 737 MAX 8</h3>
-          <p>Capacity: 162 passengers | 8 aircraft</p>
-        </div>
-        <div class="card">
-          <h3>Embraer E190</h3>
-          <p>Capacity: 100 passengers | 6 aircraft</p>
-        </div>
-      </div>
+      <table class="about-table">
+          <thead>
+              <tr style="background: #f4f4f4;">
+                  <th style="color: #2c3e50;">Model</th>
+                  <th style="color: #2c3e50;">Capacity & Count</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td><b>Airbus A320neo</b></td>
+                  <td>Capacity: 180 passengers | 12 aircraft</td>
+              </tr>
+              <tr>
+                  <td><b>Boeing 737 MAX 8</b></td>
+                  <td>Capacity: 162 passengers | 8 aircraft</td>
+              </tr>
+              <tr>
+                  <td><b>Embraer E190</b></td>
+                  <td>Capacity: 100 passengers | 6 aircraft</td>
+              </tr>
+          </tbody>
+      </table>
     </section>
 
     <section class="stats">
@@ -80,7 +114,7 @@
     </section>
 
     <footer class="footer">
-      <p>&copy; 2026 Nile Horizon Airlines — All rights reserved.</p>
+      <p>&copy; 2026 Nile Horizon Airlines — Faculty Project. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
