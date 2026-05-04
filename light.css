@@ -1,49 +1,58 @@
-/* 🌞 LIGHT MODE */
+/* LIGHT MODE (الوضع الفاتح)
+الملف ده مسؤول عن ألوان وتصميم الـ light theme */
 
-/* 🌍 Base */
+/* BASE (إعدادات أساسية)
+تحديد لون الخلفية والنص */
 body {
   background: #f0f7ff;
   color: #1a3a5f;
 }
 
-/* 🧭 Navbar + Stats */
+/* NAVBAR + STATS (النافبار والإحصائيات)
+خلفية بيضاء وحد أزرق أسفلهم */
 .navbar,
 .stats {
   background: #ffffff;
   border-bottom: 3px solid #0055ff;
 }
 
-/* 🔗 Links */
+/* NAVBAR LINK (روابط النافبار)
+لون اللينكات */
 .navbar__link {
   color: #0055ff;
 }
 
 .navbar__link:hover {
-  opacity: 0.8;
+  opacity: 0.8; /* تقليل الشفافية عند المرور */
 }
 
-/* 🎯 Hero */
+/* HERO (البانر الرئيسي)
+صورة خلفية */
 .hero {
   background-image: url("https://images.unsplash.com/photo-1474302770737-173ee21bab63");
   background-size: cover;
   background-position: center;
 }
 
+/* HERO CONTENT (محتوى الهيرو)
+خلفية شفافة مع blur */
 .hero-content {
   background: rgba(255, 255, 255, 0.75);
   color: #1a3a5f;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px); /* تأثير ضبابي */
   max-width: 90%;
 }
 
-/* 📦 Cards */
+/* CARDS + SEARCH (الكروت وصندوق البحث)
+خلفية بيضاء وظل */
 .search-box,
 .card {
   background: #ffffff;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-/* 🔘 Buttons */
+/* BUTTONS (الأزرار)
+لون أساسي أزرق */
 .main-btn {
   background: #0055ff;
   color: white;
@@ -53,21 +62,148 @@ body {
   opacity: 0.9;
 }
 
-/* ✏️ Inputs */
+/* INPUTS (الحقول)
+تنسيق الحقول في light mode */
 input,
-textarea {
+textarea,
+select {
   border: 1px solid #b3d1ff;
+  background: #fff;
+  color: #1a3a5f;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #0055ff;
 }
 
 input[readonly] {
-  background: #e8f1ff;
+  background: #e8f1ff; /* لون مختلف للحقل المقفول */
   color: #0055ff;
 }
 
-/* ======================================================
-   ACCOUNT USER (Hi + Logout)
-====================================================== */
+/* TABLES (الجداول)
+تنسيق موحد لكل الجداول */
+.routes-table,
+.advanced-bookings-table,
+.advanced-payment-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #ffffff;
+  color: #333;
+}
 
+.routes-table th,
+.routes-table td,
+.advanced-bookings-table th,
+.advanced-bookings-table td,
+.advanced-payment-table th,
+.advanced-payment-table td {
+  border: 1px solid #ccc;
+  padding: 15px;
+  text-align: center;
+}
+
+.routes-table thead,
+.advanced-bookings-table thead,
+.advanced-payment-table thead {
+  background: #f3f4f6;
+}
+
+/* TABLE HOVER (تأثير على صفوف الجدول)
+بيظهر لون عند المرور */
+.advanced-bookings-table tbody tr:hover {
+  background: #fffdf5;
+}
+
+/* PAYMENT PAGE (صفحة الدفع)
+إخفاء الفورم لحد ما يتفعل */
+.payment-form-section {
+  display: none;
+  margin-top: 30px;
+}
+
+.active {
+  display: block !important;
+}
+
+/* CARD TABLE (جدول بيانات الكارت) */
+.card-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.card-table td {
+  padding: 5px;
+  border: none;
+}
+
+/* FLEX CONTAINER (تنسيق العناصر جنب بعض) */
+.flex-container {
+  display: flex;
+  gap: 10px;
+}
+
+/* PASSENGER DETAILS (بيانات الركاب) */
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.details-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.section-label {
+  background: #f5f5f5;
+  font-weight: 900;
+  text-align: center;
+  width: 20%;
+  font-size: 1.1rem;
+}
+
+.card-header-text {
+  padding: 15px;
+  background: #2c3e50;
+  color: #fff;
+  font-weight: 900;
+}
+
+.phone-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* BOOKINGS (الحجوزات)
+تنسيق جدول الحجوزات */
+.table-container {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+/* USER (المستخدم)
+تنسيق بيانات المستخدم في النافبار */
 .user-box {
   display: flex;
   align-items: center;
@@ -84,7 +220,6 @@ input[readonly] {
   color: white;
   border: none;
   padding: 6px 12px;
-  cursor: pointer;
   border-radius: 6px;
   font-weight: bold;
   transition: 0.3s;
@@ -94,9 +229,8 @@ input[readonly] {
   opacity: 0.85;
 }
 
-/* ======================================================
-   RESPONSIVE SAFETY PATCH (MINOR ONLY)
-====================================================== */
+/* RESPONSIVE (التجاوب)
+تعديل التصميم حسب حجم الشاشة */
 @media (max-width: 992px) {
   .hero-content {
     max-width: 95%;
@@ -104,7 +238,6 @@ input[readonly] {
 }
 
 @media (max-width: 768px) {
-
   .hero {
     padding: 40px 15px;
   }
@@ -116,11 +249,16 @@ input[readonly] {
 
   .search-box {
     width: 100%;
+    flex-direction: column;
   }
 }
 
 @media (max-width: 480px) {
   .hero-content {
     padding: 15px;
+  }
+
+  .main-btn {
+    width: 100%;
   }
 }

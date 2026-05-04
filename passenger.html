@@ -4,208 +4,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passenger Details — Nile Horizon</title>
+
+    <!-- ملفات التصميم -->
     <link rel="stylesheet" href="style.css">
     <link id="themeStylesheet" rel="stylesheet" href="light.css">
-    <style>
-        /* تنسيق الجدول المتقدم */
-        .details-table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: transparent;
-        }
-        .details-table td {
-            padding: 15px;
-            vertical-align: middle;
-            border: 1px solid rgba(255,255,255,0.1); /* حدود خفيفة تناسب الدارك مود */
-        }
-        
-        /* تقوية كلمة Identity و Travel Docs */
-        .section-label {
-            background-color: rgba(255, 255, 255, 0.05);
-            font-weight: 900; /* أقصى ثقل للخط */
-            color: #ffffff;   /* لون أبيض صريح عشان يبان */
-            text-align: center;
-            width: 20%;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-
-        /* تقوية الـ Labels اللي فوق المدخلات */
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 800; /* خط عريض */
-            color: #d4af37;   /* اللون الذهبي بوضوح */
-            font-size: 1rem;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #d4af37; /* حدود ذهبية واضحة */
-            border-radius: 5px;
-            box-sizing: border-box;
-            background-color: #fff;
-            color: #000;
-            font-weight: 700;
-        }
-
-        .phone-group { display: flex; gap: 10px; }
-
-        /* تعديل الهيدر الخاص بالكارد */
-        .card-header-text {
-            padding: 15px; 
-            background: #2c3e50; 
-            text-align: left; 
-            color: #d4af37;
-            font-weight: 900;
-            font-size: 1.2rem;
-        }
-    </style>
 </head>
+
 <body>
 
-    <nav class="navbar" id="mainNav">
-        <div class="navbar__logo">
-            <span class="navbar__logo-icon">&#9992;</span>
-            <span class="navbar__logo-text" style="font-weight: 900;">Nile Horizon</span>
-        </div>
-        <ul class="navbar__links">
-            <li><a href="home.html" class="navbar__link">Home</a></li>
-            <li><a href="flights.html" class="navbar__link">Flights</a></li>
-            <li><a href="payment.html" class="navbar__link">Book the Travel</a></li>
-            <li><a href="passenger.html" class="navbar__link navbar__link--active">Passenger Details</a></li>
-            <li><a href="my-bookings.html" class="navbar__link">My Bookings</a></li>
-            <li><a href="about.html" class="navbar__link">About</a></li>
-            <li><a href="contact.html" class="navbar__link">Contact</a></li>
-            <li><a href="sign.html" class="navbar__link">Login In / Sign up</a></li>
-        </ul>
-        <button class="theme-toggle" id="themeToggleBtn">&#127769;</button>
-    </nav>
+<!-- ================= NAVBAR ================= -->
+<!-- شريط التنقل الرئيسي في كل صفحات الموقع -->
+<nav class="navbar" id="mainNav">
 
-    <div class="section">
-        <h1 style="margin-bottom: 10px; font-weight: 900;">Passenger Details</h1>
-        <p style="font-weight: 700;">Please enter your information exactly as it appears on your passport.</p>
-
-        <form id="passengerForm" style="max-width: 900px; margin: 30px auto; text-align: left;">
-            
-            <!-- الكارد الأول: Personal Information -->
-            <div class="card" style="margin-bottom: 25px; padding: 0; overflow: hidden; border: 2px solid #d4af37;">
-                <table class="details-table">
-                    <thead>
-                        <tr>
-                            <th colspan="3" class="card-header-text">
-                                👤 PERSONAL INFORMATION
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td rowspan="2" class="section-label">Identity</td>
-                            <td>
-                                <div class="input-group">
-                                    <label>First Name</label>
-                                    <input type="text" id="fname" required>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-group">
-                                    <label>Last Name</label>
-                                    <input type="text" id="lname" required>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="input-group">
-                                    <label>Gender</label>
-                                    <select id="gender" required>
-                                        <option value="">Select</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                    </select>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-group">
-                                    <label>Date of Birth</label>
-                                    <input type="date" id="dob" required>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- الكارد الثاني: Passport & Contact -->
-            <div class="card" style="margin-bottom: 25px; padding: 0; overflow: hidden; border: 2px solid #d4af37;">
-                <table class="details-table">
-                    <thead>
-                        <tr>
-                            <th colspan="3" class="card-header-text">
-                                &#128100; PASSPORT & CONTACT
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td rowspan="2" class="section-label">Travel Docs</td>
-                            <td>
-                                <div class="input-group">
-                                    <label>Passport Number</label>
-                                    <input type="text" id="passport" required>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-group">
-                                    <label>Nationality</label>
-                                    <input type="text" id="nationality" required>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="input-group">
-                                    <label>Email Address</label>
-                                    <input type="email" id="email" required>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-group">
-                                    <label>Phone Number</label>
-                                    <div class="phone-group">
-                                        <select id="countryCode" required style="width: 130px;">
-                                            <option value="+20">🇪🇬 Egypt (+20)</option>
-                                            <option value="+44">🇬🇧 UK (+44)</option>
-                                            <option value="+1">🇺🇸 USA (+1)</option>
-                                            <option value="+962">🇯🇴 Jordan (+962)</option>
-                                            <option value="+965">🇰🇼 Kuwait (+965)</option>
-                                        </select>
-                                        <input type="tel" id="phone" required>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <button type="button"
-                        onclick="savePassengerData()"
-                        class="main-btn"
-                        style="width: 300px; font-size: 1.2rem; font-weight: 900; border: 2px solid #000;">
-                    Continue to Payment
-                </button>
-            </div>
-
-        </form>
+    <!-- اللوجو -->
+    <div class="navbar__logo">
+        <span class="navbar__logo-icon">&#9992;</span>
+        <span class="navbar__logo-text">Nile Horizon</span>
     </div>
 
-    <footer class="footer">
-        <p style="font-weight: 700;">&copy; 2026 Nile Horizon Airlines — Faculty Project. All rights reserved.</p>
-    </footer>
+    <!-- روابط الموقع -->
+    <ul class="navbar__links">
+        <li><a href="home.html" class="navbar__link"><span>&#127968;</span> Home</a></li>
+        <li><a href="flights.html" class="navbar__link"><span>&#9992;</span> Flights</a></li>
+        <li><a href="payment.html" class="navbar__link"><span>&#128179;</span> Book the Travel</a></li>
+        <li><a href="passenger.html" class="navbar__link"><span>&#128100;</span> Passenger Details</a></li>
+        <li><a href="my-bookings.html" class="navbar__link"><span>&#128203;</span> My Bookings</a></li>
+        <li><a href="about.html" class="navbar__link"><span>&#8505;</span> About</a></li>
+        <li><a href="contact.html" class="navbar__link navbar__link--active"><span>&#128222;</span> Contact</a></li>
+        <li><a href="sign.html" class="navbar__link"><span>&#128274;</span> Login In / Sign up</a></li>
+    </ul>
 
-    <script src="script.js"></script>
+    <!-- زرار تغيير الثيم -->
+    <button class="theme-toggle" id="themeToggleBtn">&#127769;</button>
+</nav>
+
+<!-- ================= PAGE CONTENT ================= -->
+<div class="section">
+
+    <h1>Passenger Details</h1>
+    <p>Please enter your information exactly as it appears on your passport.</p>
+
+    <!-- الفورم الرئيسي -->
+    <form id="passengerForm">
+                <!-- ================= PERSONAL INFORMATION ================= -->
+        <div class="card">
+
+            <table class="details-table">
+
+                <thead>
+                    <tr>
+                        <th colspan="3" class="card-header-text">
+                            &#128100; PERSONAL INFORMATION
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <!-- الاسم -->
+                    <tr>
+                        <td rowspan="2" class="section-label">Identity</td>
+
+                        <td>
+                            <div class="input-group">
+                                <label>First Name</label>
+                                <input type="text" id="fname" required>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="input-group">
+                                <label>Last Name</label>
+                                <input type="text" id="lname" required>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- النوع + تاريخ الميلاد -->
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <label>Gender</label>
+                                <select id="gender" required>
+                                    <option value="">Select</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="input-group">
+                                <label>Date of Birth</label>
+                                <input type="date" id="dob" required>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ================= PASSPORT & CONTACT ================= -->
+        <div class="card">
+
+            <table class="details-table">
+
+                <thead>
+                    <tr>
+                        <th colspan="3" class="card-header-text">
+                            &#128100; PASSPORT & CONTACT
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <!-- بيانات السفر -->
+                    <tr>
+                        <td rowspan="2" class="section-label">Travel Docs</td>
+
+                        <td>
+                            <div class="input-group">
+                                <label>Passport Number</label>
+                                <input type="text" id="passport" required>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="input-group">
+                                <label>Nationality</label>
+                                <input type="text" id="nationality" required>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- الإيميل + التليفون -->
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <label>Email Address</label>
+                                <input type="email" id="email" required>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="input-group">
+                                <label>Phone Number</label>
+
+                                <div class="phone-group">
+                                    <select id="countryCode" required>
+                                        <option value="+20">🇪🇬 Egypt (+20)</option>
+                                        <option value="+44">🇬🇧 UK (+44)</option>
+                                        <option value="+1">🇺🇸 USA (+1)</option>
+                                        <option value="+962">🇯🇴 Jordan (+962)</option>
+                                        <option value="+965">🇰🇼 Kuwait (+965)</option>
+                                        <option value="+86">🇨🇳 China (+86)</option>
+                                        <option value="+91">🇮🇳 India (+91)</option>
+                                        <option value="+33">🇫🇷 France (+33)</option>
+                                        <option value="+39">🇮🇹 Italy (+39)</option>
+                                        <option value="+49">🇩🇪 Germany (+49)</option>
+                                        <option value="+34">🇪🇸 Spain (+34)</option>
+                                        <option value="+90">🇹🇷 Turkey (+90)</option>
+                                    </select>
+
+                                    <input type="tel" id="phone" required>
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- زر الاستمرار -->
+        <div class="section">
+            <button type="button"
+                    onclick="savePassengerData()"
+                    class="main-btn">
+                Continue to Payment
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>&copy; 2026 Nile Horizon Airlines — Faculty Project. All rights reserved.</p>
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+
 </body>
 </html>

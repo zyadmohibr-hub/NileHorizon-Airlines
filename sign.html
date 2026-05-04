@@ -4,31 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nile Horizon — Account</title>
+
     <link rel="stylesheet" href="style.css">
     <link id="themeStylesheet" rel="stylesheet" href="light.css">
+
     <style>
         .form-section { display: none; }
         .form-section.active { display: block; animation: slideIn 0.4s ease-out; }
 
-        @keyframes slideIn { 
-            from { transform: translateY(10px); opacity: 0; } 
-            to { transform: translateY(0); opacity: 1; } 
+        @keyframes slideIn {
+            from { transform: translateY(10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        .tab-btn { 
-            cursor: pointer; 
-            padding: 10px 25px; 
-            border: none; 
-            background: none; 
-            font-size: 1.1rem; 
-            transition: 0.3s; 
+        .tab-btn {
+            cursor: pointer;
+            padding: 10px 25px;
+            border: none;
+            background: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
             color: #888;
             border-bottom: 3px solid transparent;
         }
 
-        .tab-btn.active { 
-            color: #d4af37; 
-            border-bottom: 3px solid #d4af37; 
+        .tab-btn.active {
+            color: #d4af37;
+            border-bottom: 3px solid #d4af37;
             font-weight: 900 !important;
         }
 
@@ -36,7 +38,7 @@
             font-weight: 900 !important;
             font-size: 2.2rem;
             margin-bottom: 15px;
-            color: inherit; 
+            color: inherit;
         }
 
         .inputs label {
@@ -60,12 +62,12 @@
             border-color: #d4af37;
         }
 
-        /* تنسيق جدول اختيار الدولة */
         .country-table {
             width: 100%;
             margin-bottom: 15px;
             border-collapse: collapse;
         }
+
         .country-table td {
             padding: 0;
         }
@@ -75,20 +77,21 @@
 <body>
 
 <nav class="navbar" id="mainNav">
-  <div class="navbar__logo">&#9992; Nile Horizon</div>
-  <ul class="navbar__links">
-    <li><a class="navbar__link" href="home.html">Home</a></li>
-    <li><a class="navbar__link" href="flights.html">Flights</a></li>
-    <li><a class="navbar__link" href="payment.html">Book the Travel</a></li>
-    <li><a class="navbar__link" href="passenger.html">Passenger Details</a></li>
-    <li><a class="navbar__link" href="my-bookings.html">My Bookings</a></li>
-    <li><a class="navbar__link" href="about.html">About</a></li>
-    <li><a class="navbar__link" href="contact.html">Contact</a></li>
-    <li><a class="navbar__link" href="sign.html">Login / Sign up</a></li>
-  </ul>
-  <button class="theme-toggle" id="themeToggleBtn">&#127769;</button>
-</nav>
+  <div class="navbar__logo">✈ Nile Horizon</div>
 
+  <ul class="navbar__links">
+    <li><a href="home.html" class="navbar__link">🏠 Home</a></li>
+    <li><a href="flights.html" class="navbar__link">✈ Flights</a></li>
+    <li><a href="payment.html" class="navbar__link">💳 Book the Travel</a></li>
+    <li><a href="passenger.html" class="navbar__link">👤 Passenger Details</a></li>
+    <li><a href="my-bookings.html" class="navbar__link">📋 My Bookings</a></li>
+    <li><a href="about.html" class="navbar__link">ℹ About</a></li>
+    <li><a href="contact.html" class="navbar__link navbar__link--active">📞 Contact</a></li>
+    <li><a href="sign.html" class="navbar__link">🔒 Login In / Sign up</a></li>
+  </ul>
+
+  <button class="theme-toggle" id="themeToggleBtn">🌙</button>
+</nav>
 <main class="container" style="display:flex; justify-content:center; padding:50px 20px;">
   <div class="card shadow-card" style="max-width:450px; width:100%; padding:40px; text-align:center; border-radius:20px;">
 
@@ -109,16 +112,17 @@
         <input type="password" id="loginPass" style="width:100%; padding:14px;">
       </div>
 
-      <button onclick="validateLogin()" style="width:100%; margin-top:20px; padding:16px; background:#d4af37; color:white; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">
+      <button onclick="validateLogin()"
+        style="width:100%; margin-top:20px; padding:16px; background:#d4af37; color:white; border:none; border-radius:10px; font-weight:bold;">
         Login
       </button>
     </section>
-
-    <!-- SIGN UP -->
+        <!-- SIGN UP -->
     <section id="signupForm" class="form-section">
       <h1>Create Account</h1>
 
       <div class="inputs" style="text-align:left; margin-top:20px;">
+
         <label>Full Name</label>
         <input type="text" id="newName" style="width:100%; padding:14px; margin-bottom:15px;">
 
@@ -126,12 +130,12 @@
         <input type="email" id="newEmail" style="width:100%; padding:14px; margin-bottom:15px;">
 
         <label>Phone Number</label>
-        
-        <!-- استخدام Table لتنظيم كود الدولة ورقم الهاتف -->
+
         <table class="country-table">
             <tr>
-                <td style="width: 35%; padding-right: 10px;">
-                    <select id="countryCode" style="width:100%; padding:12px; border-radius:6px; border: 2px solid #ccc;">
+                <td style="width:35%; padding-right:10px;">
+                    <select id="countryCode"
+                        style="width:100%; padding:12px; border-radius:6px; border:2px solid #ccc;">
                         <option value="+20">🇪🇬 Egypt (+20)</option>
                         <option value="+44">🇬🇧 UK (+44)</option>
                         <option value="+1">🇺🇸 USA (+1)</option>
@@ -146,8 +150,11 @@
                         <option value="+90">🇹🇷 Turkey (+90)</option>
                     </select>
                 </td>
+
                 <td>
-                    <input type="tel" id="phone" placeholder="10XXXXXXXX" style="width:100%; padding:14px;">
+                    <input type="tel" id="phone"
+                        placeholder="10XXXXXXXX"
+                        style="width:100%; padding:14px;">
                 </td>
             </tr>
         </table>
@@ -159,7 +166,8 @@
         <input type="password" id="repeatPass" style="width:100%; padding:14px;">
       </div>
 
-      <button onclick="validateSignup()" style="width:100%; margin-top:20px; padding:16px; background:#d4af37; color:white; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">
+      <button onclick="validateSignup()"
+        style="width:100%; margin-top:20px; padding:16px; background:#d4af37; color:white; border:none; border-radius:10px; font-weight:bold;">
         Sign Up
       </button>
     </section>
