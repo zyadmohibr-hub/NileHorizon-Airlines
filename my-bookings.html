@@ -1,88 +1,131 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Bookings — Nile Horizon Airlines</title>
-
-    <!-- ملفات CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link id="themeStylesheet" rel="stylesheet" href="light.css">
-</head>
-
-<body>
-
-<!-- ================= NAVBAR ================= -->
-<!-- شريط التنقل الرئيسي للموقع -->
-<nav class="navbar" id="mainNav">
-
-    <!-- اللوجو -->
-    <div class="navbar__logo">
-        <span class="navbar__logo-icon">&#9992;</span>
-        <span class="navbar__logo-text">Nile Horizon</span>
-    </div>
-
-    <!-- روابط الصفحات -->
-    <ul class="navbar__links">
-        <li><a href="home.html" class="navbar__link"><span>&#127968;</span> Home</a></li>
-        <li><a href="flights.html" class="navbar__link"><span>&#9992;</span> Flights</a></li>
-        <li><a href="payment.html" class="navbar__link"><span>&#128179;</span> Book the Travel</a></li>
-        <li><a href="passenger.html" class="navbar__link"><span>&#128100;</span> Passenger Details</a></li>
-        <li><a href="my-bookings.html" class="navbar__link"><span>&#128203;</span> My Bookings</a></li>
-        <li><a href="about.html" class="navbar__link"><span>&#8505;</span> About</a></li>
-        <li><a href="contact.html" class="navbar__link navbar__link--active"><span>&#128222;</span> Contact</a></li>
-        <li><a href="sign.html" class="navbar__link"><span>&#128274;</span> Login In / Sign up</a></li>
-    </ul>
-
-    <!-- زر تغيير الثيم -->
-    <button class="theme-toggle" id="themeToggleBtn">&#127769;</button>
-
-</nav>
-<!-- ================= MAIN CONTENT ================= -->
-<main class="container">
-
-    <!-- عنوان الصفحة -->
+    <link rel="stylesheet" href="style.css" />
+    <link id="themeStylesheet" rel="stylesheet" href="light.css" />
+    <!-- لينك مكتبة الأيقونات عشان نظهر أشكال حلوة في الموقع -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <h1>My Bookings</h1>
-        <p>Manage your fixed flights and newly booked travels.</p>
+      <nav class="navbar">
+        <!-- اللوجو بتاع الموقع -->
+        <div class="navbar__logo">
+          <a href="home.html" class="navbar__link navbar__link--active">
+            <i class="fa-solid fa-plane-departure"></i> Nile Horizon</a
+          >
+        </div>
+
+        <!-- اللينكات اللي بتودي على صفحات الموقع التانية -->
+        <ul class="navbar__links">
+          <li>
+            <a href="home.html" class="navbar__link navbar__link--active"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="flights.html" class="navbar__link"
+              ><i class="fa-solid fa-plane"></i> Flights</a
+            >
+          </li>
+          <li>
+            <a href="payment.html" class="navbar__link"
+              ><i class="fa-solid fa-credit-card"></i> Book</a
+            >
+          </li>
+          <li>
+            <a href="passenger.html" class="navbar__link"
+              ><i class="fa-solid fa-user"></i> Passenger</a
+            >
+          </li>
+          <li>
+            <a href="my-bookings.html" class="navbar__link"
+              ><i class="fa-solid fa-suitcase-rolling"></i> Bookings</a
+            >
+          </li>
+          <li>
+            <a href="about.html" class="navbar__link"
+              ><i class="fa-solid fa-circle-info"></i> About</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" class="navbar__link"
+              ><i class="fa-solid fa-envelope"></i> Contact</a
+            >
+          </li>
+          <li>
+            <a href="sign.html" class="navbar__link"
+              ><i class="fa-solid fa-right-to-bracket"></i> Login / Sign up</a
+            >
+          </li>
+        </ul>
+
+        <!-- الزرار اللي بيقلب من نهاري لليلي والعكس -->
+        <button id="themeToggleBtn" class="theme-toggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
     </header>
 
-    <!-- جدول الحجوزات -->
-    <div class="table-container">
+    <main class="container" style="padding: 40px 20px; min-height: 80vh">
+      <header style="text-align: center; margin-bottom: 30px">
+        <h1 style="font-size: 2.8rem; margin-bottom: 10px">My Bookings</h1>
+        <p style="color: #666; font-size: 1.1rem">
+          Manage your fixed flights and newly booked travels.
+        </p>
+      </header>
 
+      <div class="table-container">
         <table class="advanced-bookings-table">
-
-            <!-- رأس الجدول -->
-            <thead>
-                <tr>
-                    <th>Flight Route</th>
-                    <th>Travel Class</th>
-                    <th>Payment</th>
-                    <th>Total Price</th>
-                    <th>Operations</th>
-                    <th>Booking Date</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-
-            <!-- جسم الجدول (بيتم ملؤه من JavaScript) -->
-            <tbody id="bookingsBody">
-                <!-- data from script.js -->
-            </tbody>
-
+          <thead>
+            <tr>
+              <th><i class="fa-solid fa-location-dot"></i> From</th>
+              <th><i class="fa-solid fa-location-arrow"></i> to</th>
+              <th><i class="fa-solid fa-couch"></i> Travel Class</th>
+              <th><i class="fa-solid fa-money-bill-wave"></i> Total Price</th>
+              <th><i class="fa-solid fa-credit-card"></i> Payment</th>
+              <th><i class="fa-solid fa-calendar-days"></i> Booking Date</th>
+              <th><i class="fa-solid fa-trash-can"></i> Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookingsBody">
+            <!-- البيانات هتنزل هنا من الـ script.js -->
+            <!-- مثال لشكل الصف لو حبيت تجربه يدوي:
+                    <tr>
+                        <td><b>Cairo</b> → <b>London</b></td>
+                        <td>Economy</td>
+                        <td style="color: #27ae60; font-weight: bold;">15,000 EGP</td>
+                        <td>Visa (**** 1234)</td>
+                        <td>2026-05-15</td>
+                        <td style="text-align: center;"><button class="delete-btn">Cancel</button></td>
+                    </tr> 
+                    -->
+          </tbody>
         </table>
+      </div>
+    </main>
 
-    </div>
+    <footer
+      class="footer"
+      style="
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+        border-top: 1px solid #eee;
+      "
+    >
+      <p>
+        &copy; 2026 Nile Horizon Airlines — Faculty Project. All rights
+        reserved.
+      </p>
+    </footer>
 
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-    <p>&copy; 2026 Nile Horizon Airlines — Faculty Project. All rights reserved.</p>
-</footer>
-
-<!-- JavaScript -->
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

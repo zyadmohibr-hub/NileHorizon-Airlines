@@ -1,254 +1,305 @@
-/* DARK MODE BASE (الوضع الليلي)
-الملف ده مسؤول عن ألوان وتصميم الـ dark theme */
+/* 🌌 الوضع الليلي (Dark Mode): شكل مستقبلي كده وحاجة فخمة */
 
+/* 🌍 خلفية الصفحة (Background) */
 body {
-    background: radial-gradient(circle at top, #0b0f1a, #050814); /* خلفية متدرجة غامقة */
-    color: #e5e7eb; /* لون النص */
+    /* تدرج لوني غامق من فوق لتحت */
+    background: radial-gradient(circle at top, #0b0f1a, #050814);
+    /* لون الخط فاتح عشان يبان على الخلفية الغامقة */
+    color: #e5e7eb;
 }
 
-/* NAV + STATS (النافبار والإحصائيات)
-خلفية شفافة مع blur */
+/* 🧭 الناف بار (Navbar) والإحصائيات (Stats) */
 .navbar,
 .stats {
+    /* لون غامق وشفاف شوية */
     background: rgba(5, 8, 20, 0.85);
-    backdrop-filter: blur(12px); /* تأثير زجاجي */
+    /* تأثير بلور (Blur) عشان يدي شكل قزاز (Glassmorphism) */
+    backdrop-filter: blur(12px);
+    /* خط تحتاني لونه بنفسجي فاتح عشان يحدد الناف بار */
     border-bottom: 1px solid rgba(168, 85, 247, 0.4);
 }
 
-/* NAVBAR LINK (روابط النافبار) */
+/* 🔗 اللينكات بتاعت الناف بار */
 .navbar__link {
     color: #a78bfa;
 }
 
+/* لما الماوس يروح على اللينك */
 .navbar__link:hover {
-    color: #38bdf8; /* تغيير اللون عند المرور */
+    color: #38bdf8;
+    /* ظل خفيف للكلمة عشان تنور */
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
 }
 
-/* HERO (البانر الرئيسي) */
+/* 🎯 الهيرو (الصورة اللي في أول الصفحة) */
 .hero {
+    /* رجعنا الصورة الأصلية لصفحة الرئيسية (Home) */
     background-image: url("https://images.unsplash.com/photo-1474302770737-173ee21bab63");
+    /* فلتر عشان نغمق الصورة شوية ونزود التباين وتبقى ماشية مع الوضع الليلي */
+    filter: brightness(0.6) contrast(1.2) saturate(1.1);
     background-size: cover;
+    background-position: center;
 }
 
-/* HERO CONTENT (محتوى الهيرو) */
+/* صورة الهيرو الخاصة بصفحة عن الشركة (About) بس */
+#aboutHero {
+    background-image: url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05");
+}
+
+/* المربع اللي فيه الكلام عشان يبان فوق الصورة الغامقة */
 .hero-content {
-    background: rgba(5, 8, 20, 0.75);
+    background: rgba(11, 15, 26, 0.85); /* خلفية غامقة عشان يبان عليها الكلام الفاتح */
+    color: #eee;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* تأثير بلور عشان يفصل الكلام عن الخلفية */
+    backdrop-filter: blur(10px);
+    max-width: 90%;
+    padding: 30px;
+    border-radius: 15px;
 }
 
-/* CARDS (الكروت وصندوق البحث) */
+/* 📦 الكروت ومربعات البحث */
 .search-box,
 .card,
-.contact-card,
-.info-card {
-    background: rgba(255,255,255,0.03); /* شفافية خفيفة */
-    border: 1px solid rgba(168,85,247,0.25);
+.payment-card-choice {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.08);
+    transition: 0.3s;
 }
 
-/* BUTTONS (الأزرار) */
+/* لما تقف على الكارت يطلع لفوق شوية وينور */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.25);
+}
+
+/* 🔘 الزراير */
 .main-btn,
-.logout-btn,
-.send-btn {
-    background: linear-gradient(135deg, #a78bfa, #38bdf8); /* تدرج لوني */
+.select-btn {
+    /* تدرج لوني يدي شكل حلو للزرار */
+    background: linear-gradient(135deg, #a78bfa, #38bdf8);
     color: #050814;
+    border-radius: 10px;
+    font-weight: 900;
 }
 
-/* INPUTS (الحقول في الدارك مود) */
+/* لما الماوس يجي على الزرار */
+.main-btn:hover {
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+}
+
+/* عناوين السكاشن */
+.section-label{
+    color:white;
+}
+.input-group{
+    color:white;
+}
+
+/* تنسيق الجداول لتناسب شكل الصفحة الأصلي في الدارك مود */
+.about-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background: #444;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.about-table th,
+.about-table td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.about-table th {
+  background-color: #444;
+  color: #d4af37; /* لون دهبي عشان يليق مع الفخامة */
+  font-size: 1.2rem;
+  width: 30%;
+}
+.about-table td {
+  color: #d4af37;
+  line-height: 1.6;
+}
+
+/* زرار تبديل الوضع (دارك ولايت) */
+.theme-toggle {
+    background: #d4af37;
+    color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+    background: rgba(13, 210, 16, 0.7);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* الجداول المتقدمة */
+.advanced-table-wrapper{
+    background-color: #0b0f1a;
+}
+.advanced-table {
+    background:black ;
+    color:white;
+}
+.advanced-table thead{
+  background: rgb(102, 234, 92);
+  color:#050814;
+}
+
+/* ✏️ مربعات الكتابة في الفورم */
 input,
-textarea,
-select {
-    background: rgba(5, 8, 20, 0.75);
+textarea {
+    background: rgba(5, 8, 20, 0.7);
     border: 1px solid rgba(168, 85, 247, 0.3);
-    color: #fff;
+    color: white;
+    padding: 12px;
 }
 
-/* TABLES (الجداول)
-تنسيق موحد لكل الجداول */
-.routes-table,
-.advanced-bookings-table,
-.advanced-payment-table,
-.about-table,
-.contact-table,
-.details-table {
-    width: 90%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background: rgba(255,255,255,0.03);
-    color: #e5e7eb;
+input:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.4);
 }
 
-.routes-table th,
-.routes-table td,
-.advanced-bookings-table th,
-.advanced-bookings-table td,
-.advanced-payment-table th,
-.advanced-payment-table td,
-.about-table th,
-.about-table td,
-.contact-table td,
-.details-table td {
-    border: 1px solid rgba(168,85,247,0.25);
-    padding: 15px;
-    text-align: center;
+/* 🧠 مسافات بين الحروف في السكاشن */
+.section {
+    letter-spacing: 0.3px;
 }
 
-/* TABLE HOVER (تأثير عند المرور على الصف) */
+/* حجوزاتي (MY BOOKINGS) */
+.table-container{
+    background: #0b0f1a;
+}
+.advanced-bookings-table th{
+    background-color: #d4af37;
+    color: white;
+}
+.advanced-bookings-table td{
+    color: white;
+}
 .advanced-bookings-table tbody tr:hover {
-    background: rgba(168,85,247,0.08);
+        background-color: #093a4f;
+        transition: 0.3s;
 }
 
-/* TABLE HEADER FIX (تعديل رأس الجدول)
-لتوحيد شكله مع باقي الجدول */
-.section table thead th,
-.about-table th,
-.contact-table thead th {
-    background-color: #0b0b1a !important; 
-    color: #ffffff !important;           
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 15px;
-    text-align: center;
-    font-weight: normal; 
+/* ======================================================
+   🔥 حساب اليوزر (كلمة Hi وزرار تسجيل الخروج)
+====================================================== */
+
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* HEADER TEXT FIX (تأكيد لون النص) */
-.section table thead th span {
-    color: #ffffff !important;
+.user-name {
+    font-weight: 900;
+    color: #a78bfa;
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
 }
 
-/* PAYMENT (صفحة الدفع) */
-.payment-form-section {
-    display: none; /* مخفي لحد التفعيل */
-}
-
-.active {
-    display: block !important;
-}
-
-/* PASSENGER DETAILS (بيانات الركاب) */
-.details-table {
-    background: transparent;
-}
-
-.details-table td {
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.section-label {
-    background: rgba(255,255,255,0.05);
-    color: #ffffff !important;
-    text-shadow: 0 0 6px rgba(168, 85, 247, 0.4);
-}
-
-.card-header-text {
-    background: #2c3e50;
-    color: #ffd369 !important;
-}
-
-/* LABELS (عناوين الحقول) */
-.input-group label {
-    color: #e5e7eb !important;
-    font-weight: 800;
-}
-
-/* PLACEHOLDER (النص داخل الحقول) */
-input::placeholder,
-select {
-    color: #cbd5e1 !important;
-}
-
-/* BOOKINGS (الحجوزات) */
-.table-container {
-    background: rgba(255,255,255,0.03);
-}
-
-/* ROUTE TEXT (نص الرحلة) */
-.route-text {
-    color: #fff;
-}
-
-/* MAP (الخريطة في الدارك مود)
-تحويلها لشكل يناسب الوضع الليلي */
-.map-box {
-    border: 1px solid rgba(168, 85, 247, 0.3);
-    filter: grayscale(100%) invert(90%) contrast(90%);
-}
-
-/* TABLE FIX FINAL (إصلاح الخلفيات)
-لمنع ظهور اللون الأبيض */
-.about-table, 
-.routes-table, 
-.advanced-bookings-table, 
-.details-table {
-    background-color: rgba(255, 255, 255, 0.03) !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(168, 85, 247, 0.3) !important;
-}
-
-.about-table td, 
-.routes-table td, 
-.advanced-bookings-table td {
-    background: transparent !important;
-    color: #e5e7eb !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-/* CONTACT GRID (تنسيق صفحة التواصل)
-ترتيب الفورم والبيانات جنب بعض */
-.contact-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 30px !important;
-    align-items: flex-start !important;
-    justify-content: space-between !important;
-    margin-top: 40px !important;
-}
-
-/* CONTACT WRAPPERS (تقسيم المساحة) */
-.contact-form-wrapper, 
-.contact-info-wrapper {
-    flex: 1 !important;
-    min-width: 0 !important;
-}
-
-/* CONTACT HEADER (عنوان الصفحة) */
-.contact-header {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-/* CONTACT CARDS (الكروت) */
-.info-card, 
-.contact-card {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(168, 85, 247, 0.2) !important;
-}
-
-/* CONTACT TABLE (الجدول) */
-.contact-table td {
-    color: #fff !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-.table-header-title {
-    color: #3a7bd5 !important;
+.logout-btn {
+    background: linear-gradient(135deg, #a78bfa, #38bdf8);
+    color: #050814;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 6px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
-/* RESPONSIVE CONTACT (الموبايل) */
-@media (max-width: 900px) {
-    .contact-grid {
-        flex-direction: column !important;
-    }
+.logout-btn:hover {
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.6);
+}
 
-    .contact-form-wrapper, 
-    .contact-info-wrapper {
-        width: 100% !important;
+/* ======================================================
+   تظبيط المقاسات للشاشات (الريسبونسيف)
+====================================================== */
+
+@media (max-width: 992px) {
+    .hero-content {
+        max-width: 95%;
     }
 }
 
-/* MOBILE FIX EXTRA */
 @media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column !important;
+    .hero {
+        padding: 40px 15px;
     }
+
+    .hero-content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .navbar,
+    .stats {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 15px;
+    }
+
+    .navbar__link {
+        font-size: 14px;
+    }
+
+    .main-btn,
+    .select-btn {
+        width: 100%;
+    }
+}
+/* ======================================================
+   تحسين ألوان كروت الرحلات في الوضع الداكن
+====================================================== */
+.flights-table .card {
+    background: rgba(20, 25, 45, 0.85);
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    text-align: center;
+}
+.flights-table .card:hover {
+    background: rgba(30, 35, 60, 0.95);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+}
+.price {
+    color: #38bdf8 !important;
+}
+
+/* ======================================================
+   تحسين فورم الدفع (Cash & Visa) في الوضع الداكن
+====================================================== */
+.checkout-title {
+    color: #a78bfa;
+}
+.price-title {
+    color: #38bdf8;
+}
+.account-details-td {
+    background: rgba(168, 85, 247, 0.15);
+    color: #eee;
+    border-right: 1px solid rgba(168, 85, 247, 0.3);
+}
+.advanced-payment-table td,
+.advanced-payment-table th {
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+.advanced-payment-table th {
+    background-color: rgba(11, 15, 26, 0.9);
+    color: #38bdf8;
+    border-bottom: 2px solid #a78bfa;
 }

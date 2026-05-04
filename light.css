@@ -1,243 +1,157 @@
-/* LIGHT MODE (الوضع الفاتح)
-الملف ده مسؤول عن ألوان وتصميم الـ light theme */
+/* 🌞 الوضع النهاري (Light Mode) */
 
-/* BASE (إعدادات أساسية)
-تحديد لون الخلفية والنص */
+/* 🌍 الأساسيات للبودي (Body) */
 body {
+  /* لون الخلفية فاتح ومريح للعين */
   background: #f0f7ff;
+  /* لون الخط أزرق غامق عشان يبقى مقروء كويس */
   color: #1a3a5f;
 }
 
-/* NAVBAR + STATS (النافبار والإحصائيات)
-خلفية بيضاء وحد أزرق أسفلهم */
+/* 🧭 الناف بار (Navbar) والإحصائيات (Stats) */
 .navbar,
 .stats {
+  /* خلفية بيضا عشان تدي شكل نضيف */
   background: #ffffff;
+  /* خط أزرق تحتهم يدي شكل جمالي */
   border-bottom: 3px solid #0055ff;
 }
 
-/* NAVBAR LINK (روابط النافبار)
-لون اللينكات */
+/* 🔗 اللينكات بتاعت الناف بار */
 .navbar__link {
   color: #0055ff;
 }
 
+/* تأثير لما الماوس ييجي على اللينك */
 .navbar__link:hover {
-  opacity: 0.8; /* تقليل الشفافية عند المرور */
+  opacity: 0.8;
 }
 
-/* HERO (البانر الرئيسي)
-صورة خلفية */
+/* 🎯 الهيرو (الصورة الكبيرة اللي في أول الصفحة) */
 .hero {
+  /* رجعنا الصورة الأصلية لصفحة الرئيسية (Home) */
   background-image: url("https://images.unsplash.com/photo-1474302770737-173ee21bab63");
   background-size: cover;
   background-position: center;
 }
 
-/* HERO CONTENT (محتوى الهيرو)
-خلفية شفافة مع blur */
-.hero-content {
-  background: rgba(255, 255, 255, 0.75);
-  color: #1a3a5f;
-  backdrop-filter: blur(8px); /* تأثير ضبابي */
-  max-width: 90%;
+/* صورة الهيرو الخاصة بصفحة عن الشركة (About) بس */
+#aboutHero {
+  background-image: url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05");
 }
 
-/* CARDS + SEARCH (الكروت وصندوق البحث)
-خلفية بيضاء وظل */
+/* المربع اللي فيه الكلام فوق الصورة عشان يبان ويبقى واضح */
+.hero-content {
+  /* خلفية بيضا شفافة شوية */
+  background: rgba(255, 255, 255, 0.85);
+  /* لون الكلام نخليه أزرق غامق أو أسود عشان يبان على الخلفية الفاتحة (حل مشكلة الكلام اللي مش باين) */
+  color: #1a3a5f;
+  /* تأثير ضبابي (Blur) ورا المربع */
+  backdrop-filter: blur(8px);
+  max-width: 90%;
+  /* إطار خفيف بلون دهبي شيك */
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+/* 📦 الكروت ومربع البحث */
 .search-box,
 .card {
   background: #ffffff;
+  /* ضل خفيف عشان الكارت يبان بارز شوية */
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-/* BUTTONS (الأزرار)
-لون أساسي أزرق */
+/* 🔘 الزراير الأساسية */
 .main-btn {
   background: #0055ff;
   color: white;
 }
 
+/* لما تقف على الزرار لونه يبهت سنة */
 .main-btn:hover {
   opacity: 0.9;
 }
 
-/* INPUTS (الحقول)
-تنسيق الحقول في light mode */
+/* زرار تغيير الوضع (النهاري والليلي) */
+.theme-toggle {
+    background: rgb(17, 22, 96);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* تأثير الزرار لما تقف عليه */
+.theme-toggle:hover {
+    background: darkmagenta;
+}
+
+/* ✏️ مربعات الإدخال (الإنبوتات) في الفورم */
 input,
-textarea,
-select {
+textarea {
+  /* إطار أزرق فاتح */
   border: 1px solid #b3d1ff;
-  background: #fff;
-  color: #1a3a5f;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: #0055ff;
-}
-
+/* الإنبوتات المقفولة (اللي مش بتتعدل) */
 input[readonly] {
-  background: #e8f1ff; /* لون مختلف للحقل المقفول */
+  background: #e8f1ff;
   color: #0055ff;
 }
 
-/* TABLES (الجداول)
-تنسيق موحد لكل الجداول */
-.routes-table,
-.advanced-bookings-table,
-.advanced-payment-table {
-  width: 90%;
-  margin: 20px auto;
-  border-collapse: collapse;
-  background: #ffffff;
-  color: #333;
-}
+/* ======================================================
+   بيانات اليوزر (لما يعمل تسجيل دخول)
+====================================================== */
 
-.routes-table th,
-.routes-table td,
-.advanced-bookings-table th,
-.advanced-bookings-table td,
-.advanced-payment-table th,
-.advanced-payment-table td {
-  border: 1px solid #ccc;
-  padding: 15px;
-  text-align: center;
-}
-
-.routes-table thead,
-.advanced-bookings-table thead,
-.advanced-payment-table thead {
-  background: #f3f4f6;
-}
-
-/* TABLE HOVER (تأثير على صفوف الجدول)
-بيظهر لون عند المرور */
-.advanced-bookings-table tbody tr:hover {
-  background: #fffdf5;
-}
-
-/* PAYMENT PAGE (صفحة الدفع)
-إخفاء الفورم لحد ما يتفعل */
-.payment-form-section {
-  display: none;
-  margin-top: 30px;
-}
-
-.active {
-  display: block !important;
-}
-
-/* CARD TABLE (جدول بيانات الكارت) */
-.card-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-.card-table td {
-  padding: 5px;
-  border: none;
-}
-
-/* FLEX CONTAINER (تنسيق العناصر جنب بعض) */
-.flex-container {
-  display: flex;
-  gap: 10px;
-}
-
-/* PASSENGER DETAILS (بيانات الركاب) */
-.details-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: transparent;
-}
-
-.details-table td {
-  padding: 15px;
-  border: 1px solid #ddd;
-  vertical-align: middle;
-}
-
-.section-label {
-  background: #f5f5f5;
-  font-weight: 900;
-  text-align: center;
-  width: 20%;
-  font-size: 1.1rem;
-}
-
-.card-header-text {
-  padding: 15px;
-  background: #2c3e50;
-  color: #fff;
-  font-weight: 900;
-}
-
-.phone-group {
-  display: flex;
-  gap: 10px;
-}
-
-/* BOOKINGS (الحجوزات)
-تنسيق جدول الحجوزات */
-.table-container {
-  overflow-x: auto;
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.delete-btn {
-  background: #e74c3c;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  background: #c0392b;
-}
-
-/* USER (المستخدم)
-تنسيق بيانات المستخدم في النافبار */
+/* الصندوق اللي لامم اسم اليوزر وزرار الخروج */
 .user-box {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* تنسيق اسم اليوزر */
 .user-name {
   font-weight: 900;
   color: #0055ff;
 }
 
+/* زرار تسجيل الخروج */
 .logout-btn {
   background: #0055ff;
   color: white;
   border: none;
   padding: 6px 12px;
+  cursor: pointer;
   border-radius: 6px;
   font-weight: bold;
   transition: 0.3s;
 }
 
+/* تأثير لما تقف على زرار الخروج */
 .logout-btn:hover {
   opacity: 0.85;
 }
 
-/* RESPONSIVE (التجاوب)
-تعديل التصميم حسب حجم الشاشة */
+/* ======================================================
+   تظبيط المقاسات للشاشات المختلفة (الريسبونسيف)
+====================================================== */
+
+/* للشاشات الأقل من 992 بيكسل (التابلت) */
 @media (max-width: 992px) {
   .hero-content {
     max-width: 95%;
   }
 }
 
+/* للشاشات الأقل من 768 بيكسل (الموبايلات الكبيرة) */
 @media (max-width: 768px) {
+
   .hero {
     padding: 40px 15px;
   }
@@ -249,16 +163,33 @@ input[readonly] {
 
   .search-box {
     width: 100%;
-    flex-direction: column;
   }
 }
 
+/* للموبايلات الصغيرة جداً */
 @media (max-width: 480px) {
   .hero-content {
     padding: 15px;
   }
-
-  .main-btn {
-    width: 100%;
-  }
+}
+/* ======================================================
+   تنسيقات صفحة الدفع (Payment)
+====================================================== */
+.checkout-title {
+    color: #000;
+}
+.price-title {
+    color: #333;
+}
+.account-details-td {
+    background: #f1f1f1;
+    color: #000;
+}
+.advanced-payment-table td,
+.advanced-payment-table th {
+    border: 1px solid #333;
+}
+.advanced-payment-table th {
+    background-color: #2c3e50;
+    color: #ffffff;
 }

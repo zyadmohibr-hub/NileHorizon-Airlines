@@ -1,161 +1,162 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nile Horizon Airlines | Home</title>
 
-<head>
-  <!-- إعدادات الصفحة الأساسية -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link id="themeStylesheet" rel="stylesheet" href="light.css" />
+    <!-- لينك مكتبة الأيقونات عشان نظهر أشكال حلوة في الموقع -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
 
-  <!-- عنوان الصفحة في المتصفح -->
-  <title>Nile Horizon Airlines | Home</title>
+  <body>
+    <header>
+      <nav class="navbar">
+        <!-- اللوجو بتاع الموقع -->
+        <div class="navbar__logo">
+          <a href="home.html" class="navbar__link navbar__link--active">
+            <i class="fa-solid fa-plane-departure"></i> Nile Horizon</a
+          >
+        </div>
 
-  <!-- ربط ملفات الـ CSS -->
-  <link rel="stylesheet" href="style.css">
-  <link id="themeStylesheet" rel="stylesheet" href="light.css">
-</head>
+        <!-- اللينكات اللي بتودي على صفحات الموقع التانية -->
+        <ul class="navbar__links">
+          <li>
+            <a href="home.html" class="navbar__link navbar__link--active"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="flights.html" class="navbar__link"
+              ><i class="fa-solid fa-plane"></i> Flights</a
+            >
+          </li>
+          <li>
+            <a href="payment.html" class="navbar__link"
+              ><i class="fa-solid fa-credit-card"></i> Book</a
+            >
+          </li>
+          <li>
+            <a href="passenger.html" class="navbar__link"
+              ><i class="fa-solid fa-user"></i> Passenger</a
+            >
+          </li>
+          <li>
+            <a href="my-bookings.html" class="navbar__link"
+              ><i class="fa-solid fa-suitcase-rolling"></i> Bookings</a
+            >
+          </li>
+          <li>
+            <a href="about.html" class="navbar__link"
+              ><i class="fa-solid fa-circle-info"></i> About</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" class="navbar__link"
+              ><i class="fa-solid fa-envelope"></i> Contact</a
+            >
+          </li>
+          <li>
+            <a href="sign.html" class="navbar__link"
+              ><i class="fa-solid fa-right-to-bracket"></i> Login / Sign up</a
+            >
+          </li>
+        </ul>
 
-<body>
+        <!-- الزرار اللي بيقلب من نهاري لليلي والعكس -->
+        <button id="themeToggleBtn" class="theme-toggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </header>
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Discover The World from Above</h1>
+        <p>Comfort • Safety • Luxury Travel</p>
+        <br />
+        <a
+          href="flights.html"
+          class="main-btn"
+          style="text-decoration: none; display: inline-block"
+          >Explore Flights</a
+        >
+      </div>
+    </header>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar">
+    <section class="section">
+      <h2 style="text-align: center; margin-bottom: 30px">Popular Routes</h2>
 
-  <!-- لوجو الموقع -->
-  <div class="navbar__logo"> ✈ Nile Horizon</div>
+      <!-- الجدول المتقدم اللي بيعرض بياناتك بشكل احترافي -->
+      <div
+        class="advanced-table-wrapper"
+        style="max-width: 800px; margin: auto"
+      >
+        <table class="advanced-table">
+          <thead>
+            <tr>
+              <th><i class="fa-solid fa-plane"></i> Route</th>
+              <th>
+                <i class="fa-solid fa-money-bill-wave"></i> Starting Price
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                data-label="Route"
+                style="font-weight: bold; color: #3a7bd5"
+              >
+                <i class="fa-solid fa-flag-usa"></i> Egypt → USA
+              </td>
+              <td data-label="Starting Price">10,850 EGP</td>
+            </tr>
+            <tr>
+              <td
+                data-label="Route"
+                style="font-weight: bold; color: #3a7bd5"
+              >
+                <i class="fa-solid fa-flag"></i> Egypt → UK
+              </td>
+              <td data-label="Starting Price">7,400 EGP</td>
+            </tr>
+            <tr>
+              <td
+                data-label="Route"
+                style="font-weight: bold; color: #3a7bd5"
+              >
+                <i class="fa-solid fa-earth-europe"></i> Egypt → France
+              </td>
+              <td data-label="Starting Price">6,500 EGP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-  <!-- روابط التنقل داخل الموقع -->
-  <ul class="navbar__links">
+    <section class="stats">
+      <div class="stat-item">
+        <h3>10K+</h3>
+        <p>Flights</p>
+      </div>
+      <div class="stat-item">
+        <h3>50K+</h3>
+        <p>Users</p>
+      </div>
+      <div class="stat-item">
+        <h3>120+</h3>
+        <p>Destinations</p>
+      </div>
+    </section>
 
-    <li><a href="home.html" class="navbar__link"><span>🏠</span> Home</a></li>
+    <footer class="footer">
+      <p>© 2026 Nile Horizon Airlines</p>
+    </footer>
 
-    <li><a href="flights.html" class="navbar__link"><span>✈</span> Flights</a></li>
-
-    <li><a href="payment.html" class="navbar__link"><span>💳</span> Book the Travel</a></li>
-
-    <li><a href="passenger.html" class="navbar__link"><span>👤</span> Passenger Details</a></li>
-
-    <li><a href="my-bookings.html" class="navbar__link"><span>📋</span> My Bookings</a></li>
-
-    <li><a href="about.html" class="navbar__link"><span>ℹ</span> About</a></li>
-
-    <li><a href="contact.html" class="navbar__link navbar__link--active"><span>📞</span> Contact</a></li>
-
-    <li><a href="sign.html" class="navbar__link"><span>🔒</span> Login In / Sign up</a></li>
-
-  </ul>
-
-  <!-- زر تغيير الثيم -->
-  <button id="themeToggleBtn">🌙</button>
-
-</nav>
-
-<!-- ================= HERO SECTION ================= -->
-<header class="hero">
-
-  <div class="hero-content">
-
-    <!-- عنوان رئيسي -->
-    <h1>Discover Egypt from Above</h1>
-
-    <!-- وصف بسيط -->
-    <p>Comfort • Safety • Luxury Travel</p>
-
-    <br>
-
-    <!-- زر الانتقال للرحلات -->
-    <a href="flights.html" class="main-btn">Explore Flights</a>
-
-  </div>
-
-</header>
-
-<!-- ================= TABLE SECTION ================= -->
-<section class="section">
-
-  <!-- عنوان القسم -->
-  <h2 class="section-title">Popular Routes Details</h2>
-
-  <!-- جدول الرحلات -->
-  <table class="routes-table">
-
-    <thead>
-      <tr>
-        <th rowspan="2">From</th>
-        <th colspan="2">Destination & Fare</th>
-        <th rowspan="2">Travel Class</th>
-      </tr>
-
-      <tr>
-        <th>To</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-
-    <tbody>
-
-      <!-- رحلات من مصر -->
-      <tr>
-        <td rowspan="3" class="country-cell">Egypt</td>
-        <td>USA</td>
-        <td>10,850 EGP</td>
-        <td>First Class</td>
-      </tr>
-
-      <tr>
-        <td>UK</td>
-        <td>7,400 EGP</td>
-        <td>Business</td>
-      </tr>
-
-      <tr>
-        <td>France</td>
-        <td>6,500 EGP</td>
-        <td>Economy</td>
-      </tr>
-
-    </tbody>
-
-    <tfoot>
-      <tr>
-        <td colspan="4">
-          Note: Prices are subject to change based on booking date.
-        </td>
-      </tr>
-    </tfoot>
-
-  </table>
-
-</section>
-
-<!-- ================= STATS ================= -->
-<section class="stats">
-
-  <!-- عدد الرحلات -->
-  <div class="stat-item">
-    <h3>10K+</h3>
-    <p>Flights</p>
-  </div>
-
-  <!-- عدد المستخدمين -->
-  <div class="stat-item">
-    <h3>50K+</h3>
-    <p>Users</p>
-  </div>
-
-  <!-- عدد الوجهات -->
-  <div class="stat-item">
-    <h3>120+</h3>
-    <p>Destinations</p>
-  </div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <p>© 2026 Nile Horizon Airlines</p>
-</footer>
-
-<!-- ربط ملف JavaScript -->
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

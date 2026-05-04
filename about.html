@@ -1,110 +1,181 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us — Nile Horizon Airlines</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us — Nile Horizon Airlines</title>
 
-  <link id="themeStylesheet" rel="stylesheet" href="light.css">
-  <link rel="stylesheet" href="style.css">
-</head>
+    <!-- هنا بنربط ملف الـ CSS الأساسي اللي فيه التنسيقات العادية -->
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- ده الملف اللي بيحدد لو احنا في الوضع النهاري ولا الليلي، وبيتغير من الجافا سكريبت -->
+    <link id="themeStylesheet" rel="stylesheet" href="light.css" />
 
-<body>
+    <!-- مكتبة فاونت أوسوم عشان نحط أيقونات حلوة في الموقع -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ده الجزء اللي فوق خالص، الهيدر اللي فيه اللوجو واللينكات -->
+    <header>
+      <nav class="navbar">
+        <!-- اللوجو بتاع الموقع -->
+        <div class="navbar__logo">
+          <a href="home.html" class="navbar__link navbar__link--active">
+            <i class="fa-solid fa-plane-departure"></i> Nile Horizon</a
+          >
+        </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="mainNav">
-    <div class="navbar__logo">
-      <span class="navbar__logo-icon">&#9992;</span>
-      <span class="navbar__logo-text">Nile Horizon</span>
-    </div>
+        <!-- لينكات الصفحات التانية عشان اليوزر يتنقل براحته -->
+        <ul class="navbar__links">
+          <li>
+            <a href="home.html" class="navbar__link"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="flights.html" class="navbar__link"
+              ><i class="fa-solid fa-plane"></i> Flights</a
+            >
+          </li>
+          <li>
+            <a href="payment.html" class="navbar__link"
+              ><i class="fa-solid fa-credit-card"></i> Book</a
+            >
+          </li>
+          <li>
+            <a href="passenger.html" class="navbar__link"
+              ><i class="fa-solid fa-user"></i> Passenger</a
+            >
+          </li>
+          <li>
+            <a href="my-bookings.html" class="navbar__link"
+              ><i class="fa-solid fa-suitcase-rolling"></i> Bookings</a
+            >
+          </li>
+          <li>
+            <a href="about.html" class="navbar__link navbar__link--active"
+              ><i class="fa-solid fa-circle-info"></i> About</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" class="navbar__link"
+              ><i class="fa-solid fa-envelope"></i> Contact</a
+            >
+          </li>
+          <li>
+            <a href="sign.html" class="navbar__link"
+              ><i class="fa-solid fa-right-to-bracket"></i> Login / Sign up</a
+            >
+          </li>
+        </ul>
 
-    <ul class="navbar__links">
-      <li><a href="home.html" class="navbar__link"><span>&#127968;</span> Home</a></li>
-      <li><a href="flights.html" class="navbar__link"><span>&#9992;</span> Flights</a></li>
-      <li><a href="payment.html" class="navbar__link"><span>&#128179;</span> Book the Travel</a></li>
-      <li><a href="passenger.html" class="navbar__link"><span>&#128100;</span> Passenger Details</a></li>
-      <li><a href="my-bookings.html" class="navbar__link"><span>&#128203;</span> My Bookings</a></li>
-      <li><a href="about.html" class="navbar__link"><span>&#8505;</span> About</a></li>
-      <li><a href="contact.html" class="navbar__link navbar__link--active"><span>&#128222;</span> Contact</a></li>
-      <li><a href="sign.html" class="navbar__link"><span>&#128274;</span> Login In / Sign up</a></li>
-    </ul>
+        <!-- ده الزرار اللي بيغير بين النهاري والليلي -->
+        <button id="themeToggleBtn" class="theme-toggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </header>
 
-    <button class="theme-toggle" id="themeToggleBtn">&#127769;</button>
-  </nav>
+    <!-- الهيرو سكشن، هنا غيرنا الكلاس من hero__content لـ hero-content عشان التنسيق يشتغل صح والكلام يبان فوق الصورة -->
+    <section class="hero" id="aboutHero">
+      <div class="hero-content">
+        <span class="hero__tagline">Our Story</span>
+        <h1 class="hero__title">Flying Egypt Since <span>1987</span></h1>
+        <!-- وصف بسيط عن الشركة -->
+        <p class="hero__description">
+          For over three decades, Nile Horizon Airlines has connected Egyptian
+          cities with safe, affordable, and comfortable air travel.
+        </p>
+      </div>
+    </section>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="aboutHero">
-    <div class="hero__content">
-      <span class="hero__tagline">Our Story</span>
-      <h1 class="hero__title">Flying Egypt Since <span>1987</span></h1>
-      <p class="hero__description">
-        For over three decades, Nile Horizon Airlines has connected Egyptian cities with safe, affordable, and comfortable air travel.
+    <!-- سكشن مهمتنا في الشركة، معمول في جدول منظم -->
+    <section class="section">
+      <h2 class="section-title">Our Mission</h2>
+      <table class="about-table">
+        <tr>
+          <th>Safety First</th>
+          <td>
+            Every aircraft in our fleet undergoes rigorous maintenance checks.
+            Your safety is our absolute top priority.
+          </td>
+        </tr>
+        <tr>
+          <th>Affordable Travel</th>
+          <td>
+            We believe everyone deserves to explore Egypt. Our pricing makes
+            domestic flights accessible to all.
+          </td>
+        </tr>
+        <tr>
+          <th>Connecting Egypt</th>
+          <td>
+            From Cairo to Aswan, we link the nation's greatest cities daily.
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- سكشن أسطول الطيارات، وبرضه في جدول متظبط -->
+    <section class="section">
+      <h2 class="section-title">Our Fleet (Planes)</h2>
+      <table class="about-table">
+        <thead>
+          <!-- رأس الجدول متلون بلون خفيف عشان يفصل عن الباقي -->
+          <tr style="background: #f4f4f4">
+            <th>Model</th>
+            <th>Capacity & Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Airbus A320neo</b></td>
+            <td>Capacity: 180 passengers | 12 aircraft</td>
+          </tr>
+          <tr>
+            <td><b>Boeing 737 MAX 8</b></td>
+            <td>Capacity: 162 passengers | 8 aircraft</td>
+          </tr>
+          <tr>
+            <td><b>Embraer E190</b></td>
+            <td>Capacity: 100 passengers | 6 aircraft</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- سكشن الإحصائيات أو الأرقام اللي بتفخر بيها الشركة -->
+    <section class="stats">
+      <div class="stat-item">
+        <h3>37+</h3>
+        <p>Years of Service</p>
+      </div>
+      <div class="stat-item">
+        <h3>26</h3>
+        <p>Aircraft</p>
+      </div>
+      <div class="stat-item">
+        <h3>1.2M</h3>
+        <p>Passengers / Year</p>
+      </div>
+      <div class="stat-item">
+        <h3>15</h3>
+        <p>Destinations</p>
+      </div>
+    </section>
+
+    <!-- الفوتر أو الجزء اللي تحت في الصفحة -->
+    <footer class="footer">
+      <p>
+        &copy; 2026 Nile Horizon Airlines — Faculty Project. All rights
+        reserved.
       </p>
-    </div>
-  </section>
+    </footer>
 
-  <!-- MISSION SECTION -->
-  <section class="section">
-    <h2 class="section-title">Our Mission</h2>
-
-    <table class="about-table">
-      <tr>
-        <th>Safety First</th>
-        <td>Every aircraft in our fleet undergoes rigorous maintenance checks. Your safety is our absolute top priority.</td>
-      </tr>
-      <tr>
-        <th>Affordable Travel</th>
-        <td>We believe everyone deserves to explore Egypt. Our pricing makes domestic flights accessible to all.</td>
-      </tr>
-      <tr>
-        <th>Connecting Egypt</th>
-        <td>From Cairo to Aswan, we link the nation's greatest cities daily.</td>
-      </tr>
-    </table>
-  </section>
-
-  <!-- FLEET SECTION -->
-  <section class="section">
-    <h2 class="section-title">Our Fleet (Planes)</h2>
-
-    <table class="about-table fleet-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Capacity & Count</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td><b>Airbus A320neo</b></td>
-          <td>Capacity: 180 passengers | 12 aircraft</td>
-        </tr>
-        <tr>
-          <td><b>Boeing 737 MAX 8</b></td>
-          <td>Capacity: 162 passengers | 8 aircraft</td>
-        </tr>
-        <tr>
-          <td><b>Embraer E190</b></td>
-          <td>Capacity: 100 passengers | 6 aircraft</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- STATS -->
-  <section class="stats">
-    <div class="stat-item"><h3>37+</h3><p>Years of Service</p></div>
-    <div class="stat-item"><h3>26</h3><p>Aircraft</p></div>
-    <div class="stat-item"><h3>1.2M</h3><p>Passengers / Year</p></div>
-    <div class="stat-item"><h3>15</h3><p>Destinations</p></div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>&copy; 2026 Nile Horizon Airlines — Faculty Project. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <!-- ربط ملف الجافا سكريبت في الآخر عشان الصفحة تحمل أسرع -->
+    <script src="script.js"></script>
+  </body>
 </html>
