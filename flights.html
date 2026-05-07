@@ -6,7 +6,6 @@
     <title>Available Flights — Nile Horizon</title>
     <link rel="stylesheet" href="style.css" />
     <link id="themeStylesheet" rel="stylesheet" href="light.css" />
-    <!-- لينك مكتبة الأيقونات عشان نظهر أشكال حلوة في الموقع -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -37,20 +36,27 @@
         font-weight: bold;
         margin: 10px 0;
       }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* الجزء المعدل: عشان الصورة متجيش تحت الـ Navbar لما تدوس من الخريطة */
+      .card {
+        scroll-margin-top: 100px;
+      }
     </style>
   </head>
 
   <body>
     <header>
       <nav class="navbar">
-        <!-- اللوجو بتاع الموقع -->
         <div class="navbar__logo">
           <a href="home.html" class="navbar__link navbar__link--active">
             <i class="fa-solid fa-plane-departure"></i> Nile Horizon</a
           >
         </div>
 
-        <!-- اللينكات اللي بتودي على صفحات الموقع التانية -->
         <ul class="navbar__links">
           <li>
             <a href="home.html" class="navbar__link navbar__link--active"
@@ -94,7 +100,6 @@
           </li>
         </ul>
 
-        <!-- الزرار اللي بيقلب من نهاري لليلي والعكس -->
         <button id="themeToggleBtn" class="theme-toggle">
           <i class="fa-solid fa-moon"></i>
         </button>
@@ -120,7 +125,6 @@
         />
       </div>
 
-      <!-- الجدول المتقدم محتفظاً بشكل الـ Grid الأصلي -->
       <table class="flights-table">
         <thead>
           <tr>
@@ -129,11 +133,12 @@
             </th>
           </tr>
         </thead>
+
         <tbody>
-          <!-- الصف الأول -->
+
           <tr>
             <td class="flight-card-cell">
-              <div class="card">
+              <div class="card" id="usa">
                 <img src="images/us.jpg" alt="USA" />
                 <h3>Egypt → USA</h3>
                 <p>New York</p>
@@ -143,8 +148,9 @@
                 </button>
               </div>
             </td>
+
             <td class="flight-card-cell">
-              <div class="card">
+              <div class="card" id="uk">
                 <img src="images/uk.jpg" alt="UK" />
                 <h3>Egypt → UK</h3>
                 <p>London</p>
@@ -154,8 +160,9 @@
                 </button>
               </div>
             </td>
+
             <td class="flight-card-cell">
-              <div class="card">
+              <div class="card" id="france">
                 <img src="images/france.jpg" alt="France" />
                 <h3>Egypt → France</h3>
                 <p>Paris</p>
@@ -167,10 +174,9 @@
             </td>
           </tr>
 
-          <!-- الصف الثاني: مع تطبيق Rowspan بسيط للتميز -->
           <tr>
             <td class="flight-card-cell">
-              <div class="card">
+              <div class="card" id="italy">
                 <img src="images/italy.jpg" alt="Italy" />
                 <h3>Egypt → Italy</h3>
                 <p>Venice</p>
@@ -180,8 +186,9 @@
                 </button>
               </div>
             </td>
+
             <td class="flight-card-cell">
-              <div class="card">
+              <div class="card" id="rome">
                 <img src="images/rome.jpg" alt="Rome" />
                 <h3>Egypt → Rome</h3>
                 <p>Italy Capital</p>
@@ -191,8 +198,9 @@
                 </button>
               </div>
             </td>
+
             <td class="flight-card-cell">
-              <div class="card">
+              <div class="card" id="china">
                 <img src="images/china.jpg" alt="China" />
                 <h3>Egypt → China</h3>
                 <p>Beijing</p>
@@ -204,10 +212,9 @@
             </td>
           </tr>
 
-          <!-- الصف الثالث -->
           <tr>
             <td class="flight-card-cell">
-              <div class="card">
+              <div class="card" id="kuwait">
                 <img src="images/kuwait.jpg" alt="Kuwait" />
                 <h3>Egypt → Kuwait</h3>
                 <p>Gulf Region</p>
@@ -217,8 +224,9 @@
                 </button>
               </div>
             </td>
+
             <td class="flight-card-cell">
-              <div class="card">
+              <div class="card" id="jordan">
                 <img src="images/jordan.jpg" alt="Jordan" />
                 <h3>Egypt → Jordan</h3>
                 <p>Petra</p>
@@ -228,8 +236,9 @@
                 </button>
               </div>
             </td>
+
             <td class="flight-card-cell">
-              <div class="card">
+              <div class="card" id="india">
                 <img src="images/india.jpg" alt="India" />
                 <h3>Egypt → India</h3>
                 <p>New Delhi</p>
@@ -240,6 +249,7 @@
               </div>
             </td>
           </tr>
+
         </tbody>
       </table>
     </div>

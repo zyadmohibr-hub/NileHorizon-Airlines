@@ -382,3 +382,352 @@ textarea:focus {
         width: 100%;
     }
 }
+/* ======================================================
+   ملف تغيير اللاياوت (Layout Switch)
+   الملف ده بيغير ترتيب وشكل العناصر لما نتنقل
+   من الوضع النهاري للوضع الليلي والعكس
+   ملحوظة: مفيش أي var() مستخدم هنا
+   ====================================================== */
+
+/* ======================================================
+    تأثيرات الانتقال (Transitions)
+   عشان التغييرات تبان سلسة وناعمة
+   ====================================================== */
+.navbar,
+.navbar__links,
+.hero,
+.hero-content,
+.section,
+.grid-layout,
+.stats,
+.stat-item,
+.card,
+.footer,
+.search-box,
+.advanced-table-wrapper,
+.flights-table,
+.flight-card-cell,
+.video-wrapper,
+.video-box,
+.video-text {
+    transition: all 0.5s ease;
+}
+
+
+/* ======================================================
+   الوضع الليلي - تغييرات اللاياوت
+   ====================================================== */
+
+/* ────────────── الناف بار (Navbar) ────────────── */
+/* في الوضع الليلي: الناف بار بتبقى عمودية واللينكات تحت اللوجو */
+.dark-layout .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5%;
+    gap: 15px;
+}
+
+/* اللوجو بيبقى في النص */
+.dark-layout .navbar__logo {
+    text-align: center;
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+/* اللينكات بتتلف وتبقى في النص بدل ما تبقى في سطر واحد */
+.dark-layout .navbar__links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 25px;
+    width: 100%;
+    padding: 10px 0;
+    border-top: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* زرار التبديل يروح في النص تحت اللينكات */
+.dark-layout .theme-toggle {
+    margin-top: 5px;
+}
+
+
+/* ────────────── الهيرو (Hero) ────────────── */
+/* في الوضع الليلي: الهيرو بتبقى أطول والمحتوى على الشمال */
+.dark-layout .hero {
+    height: 75vh;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 40px 5%;
+}
+
+.dark-layout .hero-content {
+    text-align: left;
+    max-width: 550px;
+    margin-left: 0;
+    margin-right: auto;
+    padding: 35px 40px;
+    border-radius: 20px;
+}
+
+.dark-layout .hero-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.dark-layout .hero-content p {
+    font-size: 1.1rem;
+}
+
+
+/* ────────────── السكاشن (Sections) ────────────── */
+/* في الوضع الليلي: المحتوى على الشمال ومش في النص */
+.dark-layout .section {
+    text-align: left;
+    padding: 60px 8%;
+}
+
+.dark-layout .section h1,
+.dark-layout .section h2 {
+    text-align: left;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(168, 85, 247, 0.4);
+    display: inline-block;
+}
+
+
+/* ────────────── الجريد (Grid Layout) ────────────── */
+/* في الوضع الليلي: عمودين بدل 3 والكروت أكبر */
+.dark-layout .grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    max-width: 900px;
+    margin-left: 0;
+}
+
+
+/* ────────────── كروت الرحلات (Flight Cards) ────────────── */
+/* في الوضع الليلي: الكروت بتبقى عمودين بدل 3 */
+.dark-layout .flights-table {
+    border-spacing: 25px;
+}
+
+.dark-layout .flight-card-cell {
+    width: 50%;
+}
+
+/* أخفاء العمود التالت وعرض كروته في صف جديد */
+.dark-layout .flights-table tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 10px;
+}
+
+.dark-layout .flights-table tbody td.flight-card-cell {
+    flex: 1 1 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+    width: auto;
+}
+
+/* الكارت نفسه بيبقى أكبر شوية */
+.dark-layout .card {
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.dark-layout .card img {
+    height: 220px;
+    border-radius: 15px;
+}
+
+
+/* ────────────── الإحصائيات (Stats) ────────────── */
+/* في الوضع الليلي: 2×2 جريد بدل صف واحد */
+.dark-layout .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 50px 8%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.dark-layout .stat-item {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+}
+
+.dark-layout .stat-item h3 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+
+/* ────────────── مربع البحث (Search Box) ────────────── */
+/* في الوضع الليلي: البحث على كامل العرض وفي الشمال */
+.dark-layout .search-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 0;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+
+/* ────────────── الجداول المتقدمة (Advanced Tables) ────────────── */
+/* في الوضع الليلي: الجدول ياخد عرض أقل ويبقى على الشمال */
+.dark-layout .advanced-table-wrapper {
+    max-width: 700px;
+    margin-left: 0;
+    margin-right: auto;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+
+/* ────────────── صفحة التواصل (Contact) ────────────── */
+/* في الوضع الليلي: الفورم والمعلومات تحت بعض بدل جنب بعض */
+.dark-layout .container>div[style*="display: flex"] {
+    flex-direction: column-reverse !important;
+}
+
+/* المعلومات تيجي فوق الفورم */
+.dark-layout .container>div[style*="display: flex"]>div {
+    min-width: 100% !important;
+    flex: 1 1 100% !important;
+}
+
+
+/* ────────────── الفوتر (Footer) ────────────── */
+/* في الوضع الليلي: فوتر أكبر وبيحتوي على بوردر فوقيه */
+.dark-layout .footer {
+    padding: 35px 5%;
+    text-align: center;
+    border-top: 1px solid rgba(168, 85, 247, 0.3);
+    margin-top: 20px;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
+
+
+/* ────────────── جداول About ────────────── */
+/* في الوضع الليلي: الجدول بيبقى أضيق ومحاذي لليسار */
+.dark-layout .about-table {
+    max-width: 800px;
+}
+
+
+/* ────────────── سكشن الفيديو (Video) ────────────── */
+/* في الوضع الليلي: الفيديو فوق والكلام تحتيه بدل جنبيه */
+.dark-layout .video-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.dark-layout .video-box {
+    min-width: 100%;
+    border-radius: 20px;
+}
+
+.dark-layout .video-text {
+    min-width: 100%;
+    padding: 0 10px;
+}
+
+.dark-layout .video-text h3 {
+    margin-top: 25px;
+    font-size: 1.3rem;
+}
+
+.dark-layout .video-text h3:first-child {
+    margin-top: 0;
+}
+
+
+/* ────────────── جدول الحجوزات (Bookings) ────────────── */
+/* في الوضع الليلي: التيبل بيبقى في كارد أكبر */
+.dark-layout .table-container {
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+
+/* ────────────── صفحة التسجيل (Auth) ────────────── */
+/* في الوضع الليلي: الفورم بيبقى أضيق وفي النص */
+.dark-layout #loginForm,
+.dark-layout #signupForm {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+
+/* ======================================================
+    ريسبونسيف - الوضع الليلي على الموبايل
+   ====================================================== */
+/* موبايل */
+@media (max-width: 768px) {
+
+    /* الناف بار عمودية أساساً في الموبايل فمفيش فرق كبير */
+    .dark-layout .navbar {
+        padding: 15px 5%;
+    }
+
+    .dark-layout .navbar__links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .dark-layout .hero {
+        height: auto;
+        padding: 50px 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dark-layout .hero-content {
+        text-align: center;
+        max-width: 100%;
+        padding: 25px;
+    }
+
+    .dark-layout .section {
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .dark-layout .section h1,
+    .dark-layout .section h2 {
+        text-align: center;
+        display: block;
+    }
+
+    .dark-layout .stats {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .dark-layout .grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .dark-layout .flights-table tbody td.flight-card-cell {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .dark-layout .advanced-table-wrapper {
+        max-width: 100%;
+    }
+
+    .dark-layout .footer {
+        padding: 25px 5%;
+    }
+}

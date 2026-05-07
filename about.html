@@ -166,6 +166,142 @@
         <p>Destinations</p>
       </div>
     </section>
+      <!-- سكشن الفيديو مع كلام جنبيه -->
+    <section class="section video-section">
+      <h2 class="section-title">Fly With Confidence</h2>
+      <div class="video-wrapper">
+        <!-- الفيديو -->
+        <div class="video-box">
+          <video controls autoplay muted loop>
+            <source src="images/Fly With Confidence.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+         <!-- الكلام اللي جنب الفيديو -->
+        <div class="video-text">
+          <h3>
+            <i class="fa-solid fa-shield-halved"></i> Your Safety, Our Promise
+          </h3>
+          <p>
+            At Nile Horizon Airlines, every journey begins with trust. Our fleet
+            undergoes rigorous safety checks before every flight, and our
+            experienced crew is trained to the highest international standards.
+          </p>
+          <h3><i class="fa-solid fa-star"></i> Award-Winning Service</h3>
+          <p>
+            Recognized as Egypt's most trusted domestic carrier for three
+            consecutive years, we pride ourselves on punctuality, comfort, and
+            genuine hospitality that reflects the warmth of Egyptian culture.
+          </p>
+          <h3><i class="fa-solid fa-leaf"></i> Sustainable Aviation</h3>
+          <p>
+            We are committed to reducing our carbon footprint through
+            fuel-efficient aircraft, paperless boarding, and partnerships with
+            environmental organizations across the Nile Delta region.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div style="text-align: center">
+  <img
+    src="images/WhatsApp Image 2026-05-07 at 5.35.06 AM.jpeg"
+    alt="Nile Horizon Airlines - World Destinations Map"
+    usemap="#destinationsMap"
+    width="800"
+    style="
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+    "
+  />
+
+  <map name="destinationsMap">
+
+    <!-- USA -->
+    <area
+      shape="poly"
+      coords="82,284,171,281,194,184,108,143"
+      href="flights.html#usa"
+      alt="Fly to USA"
+      title="Egypt → USA (New York) — From 52,400 EGP"
+    />
+
+    <!-- UK -->
+    <area
+      shape="poly"
+      coords="437,172,440,78,324,137,324,165"
+      href="flights.html#uk"
+      alt="Fly to UK"
+      title="Egypt → UK (London) — From 31,800 EGP"
+    />
+
+    <!-- France -->
+    <area
+      shape="poly"
+      coords="357,208,366,263,442,266,465,179"
+      href="flights.html#france"
+      alt="Fly to France"
+      title="Egypt → France (Paris) — From 27,500 EGP"
+    />
+
+    <!-- Italy -->
+    <area
+      shape="poly"
+      coords="478,126,604,126,556,239,476,235"
+      href="flights.html#italy"
+      alt="Fly to Italy"
+      title="Egypt → Italy (Rome/Venice) — From 24,100 EGP"
+    />
+
+    <!-- Egypt -->
+    <area
+      shape="circle"
+      coords="430,210,25"
+      href="home.html"
+      alt="Cairo Hub"
+      title="Cairo — Our Main Hub"
+    />
+
+    <!-- Jordan -->
+    <area
+      shape="poly"
+      coords="744,409,809,470,690,539,667,414"
+      href="flights.html#jordan"
+      alt="Fly to Jordan"
+      title="Egypt → Jordan (Petra) — From 8,400 EGP"
+    />
+
+    <!-- Kuwait -->
+    <area 
+    shape="poly" 
+    coords="614,313,645,257,661,241,705,259,709,343,613,345" 
+    href="flights.html#kuwait" 
+    alt="Fly to Kuwait" 
+    title="Egypt → Kuwait — From 11,200 EGP">
+
+    <!-- India -->
+    <area
+      shape="poly"
+      coords="845,290,849,365,746,362,736,291"
+      href="flights.html#india"
+      alt="Fly to India"
+      title="Egypt → India (New Delhi) — From 16,300 EGP"
+    />
+
+    <!-- China -->
+    <area
+      shape="poly"
+      coords="901,294,948,184,824,150,787,278"
+      href="flights.html#china"
+      alt="Fly to China"
+      title="Egypt → China (Beijing) — From 38,600 EGP"
+    />
+
+  </map>
+</div>
+    
+
+
 
     <!-- الفوتر أو الجزء اللي تحت في الصفحة -->
     <footer class="footer">
@@ -177,5 +313,10 @@
 
     <!-- ربط ملف الجافا سكريبت في الآخر عشان الصفحة تحمل أسرع -->
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+<script>
+    // السطر ده هيخلي النقط تروح في مكانها المظبوط فوق الكويت بالملي
+    imageMapResize();
+</script>
   </body>
 </html>

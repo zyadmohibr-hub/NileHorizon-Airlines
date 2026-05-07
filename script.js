@@ -344,3 +344,60 @@ function searchFlights() {
 
     });
 }
+/* ======================================================
+   🔄 ملف تبديل اللاياوت (Layout Switch Script)
+   --------------------------------------------------
+   الملف ده بيشتغل مع ملف layout-switch.css
+   ووظيفته إنه يضيف أو يشيل كلاس "dark-layout"
+   من الـ body لما اليوزر يغير بين الوضع النهاري والليلي
+
+   كده ملف الـ CSS بيقدر يغير ترتيب العناصر (Layout)
+   مش بس الألوان
+   ====================================================== */
+
+(function () {
+    /*
+     1- أول ما الصفحة تحمل نشوف الوضع المحفوظ إيه 
+    */
+    var savedTheme = localStorage.getItem('theme');
+
+    // لو الوضع المحفوظ هو الليلي <= نضيف الكلاس على طول
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-layout');
+    }
+    /*
+    2 - نستنى الصفحة تحمل بالكامل وبعدين نربط الزرار 
+    */
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // نجيب زرار التبديل
+        var toggleBtn = document.getElementById('themeToggleBtn');
+        if (!toggleBtn) return; // لو مفيش زرار منعملش حاجة
+        // نربط حدث الضغط على الزرار
+        toggleBtn.addEventListener('click', function () {
+            /*
+               بنستخدم classList.toggle عشان ببساطة:
+               - لو الكلاس موجود => يشيله
+               - لو الكلاس مش موجود => يضيفه
+               كده مفيش مشكلة في ترتيب التنفيذ مع script.js
+            */
+            document.body.classList.toggle('dark-layout');
+        });
+    });
+})();
+document.addEventListener("DOMContentLoaded", function () {
+  // ناخد الـ hash من الرابط (زي #usa)
+  const hash = window.location.hash;
+
+  if (hash) {
+    const target = document.querySelector(hash);
+
+    if (target) {
+      // ننزل بسلاسة على القسم المطلوب
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }
+});
